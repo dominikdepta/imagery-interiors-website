@@ -18,6 +18,13 @@ export default {
 			darkGray: '#909090',
 			brown: '#BF886D',
 			green: '#9DA27E'
+		},
+		extend: {
+			maxWidth: {
+				'container-full': '1400px',
+				'container-1/2': '700px',
+				'container-1/4': '350px',
+			}
 		}
 	},
 	plugins: [],
