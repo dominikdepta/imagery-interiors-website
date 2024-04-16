@@ -1,0 +1,12 @@
+---
+interface Props {
+  class?: string;
+  end?: boolean;
+}
+
+const { class: className, end = false } = Astro.props;
+---
+
+<ul class:list={["flex", end && "justify-end", [className]]}>
+  <slot />
+</ul>

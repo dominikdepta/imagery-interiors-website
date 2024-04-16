@@ -1,0 +1,17 @@
+---
+interface Props {
+  href: string;
+  border?: boolean;
+}
+
+const { border = false, href } = Astro.props;
+---
+
+<li>
+  <a
+    href={href}
+    class:list={["block px-10 py-10 font-normal text-lg", border && "border-r"]}
+  >
+    <slot />
+  </a>
+</li>
