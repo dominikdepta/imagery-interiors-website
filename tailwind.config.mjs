@@ -8,6 +8,7 @@ export default {
 			sans: ['Arial', 'sans']
 		},
 		colors: {
+			transparent: 'transparent',
 			black: '#121110',
 			lightBlack: '#33302A',
 			blue: '#93ABBE',
