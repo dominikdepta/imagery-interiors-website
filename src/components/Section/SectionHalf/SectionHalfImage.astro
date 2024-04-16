@@ -1,0 +1,20 @@
+---
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+interface Props {
+  alt: string;
+  src: ImageMetadata;
+  class?: any;
+}
+
+const { alt, src, class: className } = Astro.props;
+---
+
+<div class="relative h-96 lg:h-auto lg:w-1/2 order-1 lg:order-none">
+  <Image
+    src={src}
+    alt={alt}
+    class:list={["absolute object-cover w-full h-full", className]}
+  />
+</div>
