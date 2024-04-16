@@ -1,0 +1,64 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+export type ButtonVariant = "primary" | "secondary" | "basic" | "underlined";
+
+export interface ButtonBaseProps {
+  variant?: ButtonVariant;
+  size?: "normal" | "small";
+}
+
+interface ButtonProps extends HTMLAttributes<"button">, ButtonBaseProps {
+  type: "button";
+}
+
+interface LinkProps extends HTMLAttributes<"a">, ButtonBaseProps {
+  type: "link";
+}
+
+type Props = ButtonProps | LinkProps;
+
+const {
+  class: className,
+  size = "normal",
+  type = "button",
+  variant = "primary",
+  ...rest
+} = Astro.props;
+
+const classCommon = "text-xs md:text-lg";
+const classBasic = "border-b-2 border-transparent hover:border-black";
+const classUnderlined = "border-b-2 border-black uppercase";
+
+const classLink = [
+  classCommon,
+  variant === "basic" && classBasic,
+  variant === "underlined" && classUnderlined,
+];
+
+const classButton = [classCommon];
+---
+
+{
+  type === "link" ? (
+    <a class:list={[...classLink, className]} {...rest}>
+      <slot />
+
+      {Astro.slots.has("after") && (
+        <span>
+          <slot />
+        </span>
+      )}
+    </a>
+  ) : (
+    <button class:list={[...classButton, className]} {...rest}>
+      <slot />
+
+      {Astro.slots.has("after") && (
+        <span>
+          <slot />
+        </span>
+      )}
+    </button>
+  )
+}
