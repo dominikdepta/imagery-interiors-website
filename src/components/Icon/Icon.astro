@@ -1,0 +1,19 @@
+---
+import iconArrow from "./assets/icon-arrow.svg?raw";
+
+export type IconType = "arrow";
+
+const icons: Readonly<Record<IconType, string>> = {
+  arrow: iconArrow,
+};
+
+interface Props {
+  type: IconType;
+}
+
+const { type } = Astro.props;
+---
+
+<span class="inline-block h-2 md:h-auto [&>svg]:h-full">
+  <Fragment set:html={icons[type]} />
+</span>
