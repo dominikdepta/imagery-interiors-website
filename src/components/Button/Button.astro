@@ -5,7 +5,6 @@ export type ButtonVariant = "primary" | "secondary" | "basic" | "underlined";
 
 export interface ButtonBaseProps {
   variant?: ButtonVariant;
-  size?: "normal" | "small";
 }
 
 interface ButtonProps extends HTMLAttributes<"button">, ButtonBaseProps {
@@ -20,28 +19,30 @@ type Props = ButtonProps | LinkProps;
 
 const {
   class: className,
-  size = "normal",
   type = "button",
   variant = "primary",
   ...rest
 } = Astro.props;
 
-const classCommon = "text-xs md:text-lg";
+const classCommon = "text-xs md:text-lg font-normal";
 const classBasic = "border-b-2 border-transparent hover:border-black";
+const classPrimary =
+  "bg-black py-2 px-3 md:py-3.5 md:px-6 text-white uppercase hover:bg-white hover:text-black transition";
+const classSecondary = "uppercase";
 const classUnderlined = "border-b-2 border-black uppercase";
 
-const classLink = [
+const classList = [
   classCommon,
   variant === "basic" && classBasic,
+  variant === "primary" && classPrimary,
+  variant === "secondary" && classSecondary,
   variant === "underlined" && classUnderlined,
 ];
-
-const classButton = [classCommon];
 ---
 
 {
   type === "link" ? (
-    <a class:list={[...classLink, className]} {...rest}>
+    <a class:list={[...classList, className]} {...rest}>
       <slot />
 
       {Astro.slots.has("after") && (
@@ -51,7 +52,7 @@ const classButton = [classCommon];
       )}
     </a>
   ) : (
-    <button class:list={[...classButton, className]} {...rest}>
+    <button class:list={[...classList, className]} {...rest}>
       <slot />
 
       {Astro.slots.has("after") && (
