@@ -1,0 +1,42 @@
+---
+import { Image } from "astro:assets";
+import heroImage from "./hero-interior.webp";
+import Button from "../Button/Button.astro";
+---
+
+<main>
+  <section class="flex flex-col md:flex-row">
+    <div
+      class="flex order-2 md:order-1 justify-end md:w-1/2 p-5 md:p-9 md:pt-96 bg-blue"
+    >
+      <div class="max-w-[680px]">
+        <h1
+          class="text-[30px] md:text-[54px] leading-none md:leading-[60px] font-serif"
+        >
+          We create spaces that <span class="italic">inspire</span> and fill with
+          <span class="italic">positive</span> energy.
+        </h1>
+
+        <p class="mt-4 md:mt-6 text-xs md:text-lg leading-snug">
+          Imagery Interiors is more than just design. We care about
+          individuality and enhancing the lifestyle of our clients.
+        </p>
+
+        <Button
+          type="link"
+          variant="underlined"
+          class="inline-block mt-6 md:mt-14"
+          href="/">Read more</Button
+        >
+      </div>
+    </div>
+
+    <div class="order-1 md:order-2 relative h-96 md:h-auto md:w-1/2">
+      <Image
+        src={heroImage}
+        alt="Interior design"
+        class="absolute object-cover w-full h-full"
+      />
+    </div>
+  </section>
+</main>
