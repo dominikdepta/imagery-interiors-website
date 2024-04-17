@@ -1,0 +1,33 @@
+---
+import Container from "@components/Container/Container.astro";
+import FooterMenu from "./FooterMenu/FooterMenu.astro";
+import FooterInfo from "./FooterInfo.astro";
+---
+
+<footer class="bg-white border-t border-lightGray">
+  <Container class="flex flex-col lg:flex-row">
+    <div
+      class="flex flex-col order-2 lg:order-1 justify-between lg:w-1/2 py-6 pr-10 lg:py-10 border-t lg:border-t-0 lg:border-r border-lightGray"
+    >
+      <FooterMenu />
+
+      <FooterInfo />
+    </div>
+
+    <div
+      class="order-1 lg:order-2 lg:w-1/2 py-6 lg:py-10 flex justify-center items-center"
+    >
+      [footer newsletter]<br />
+      [footer newsletter]<br />
+      [footer newsletter]<br />
+      [footer newsletter]<br />
+      [footer newsletter]<br />
+      [footer newsletter]<br />
+      [footer newsletter]<br />
+      [footer newsletter]<br />
+      [footer newsletter]<br />
+      [footer newsletter]<br />
+      [footer newsletter]<br />
+    </div>
+  </Container>
+</footer>

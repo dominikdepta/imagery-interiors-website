@@ -1,0 +1,31 @@
+---
+import FooterMenuItem from "./FooterMenuItem.astro";
+import FooterMenuList from "./FooterMenuList.astro";
+import FooterMenuTitle from "./FooterMenuTitle.astro";
+---
+
+<nav class="flex justify-between">
+  <div class="flex gap-10">
+    <div>
+      <FooterMenuTitle>Studio</FooterMenuTitle>
+      <FooterMenuList>
+        <FooterMenuItem><a href="/process">Process</a></FooterMenuItem>
+        <FooterMenuItem><a href="/projects">Projects</a></FooterMenuItem>
+      </FooterMenuList>
+    </div>
+
+    <div>
+      <FooterMenuTitle>Connect</FooterMenuTitle>
+      <FooterMenuList>
+        <FooterMenuItem><a href="/contact">Contact</a></FooterMenuItem>
+      </FooterMenuList>
+    </div>
+  </div>
+
+  <div>
+    <FooterMenuTitle>Find us</FooterMenuTitle>
+    <p class="text-xs text-lightBlack">
+      Lochend Road, Knightsbridge<br />London G69 8BD
+    </p>
+  </div>
+</nav>
