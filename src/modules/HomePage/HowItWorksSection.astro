@@ -3,36 +3,28 @@ import SectionHalf from "@components/Section/SectionHalf/SectionHalf.astro";
 import SectionHalfContent from "@components/Section/SectionHalf/SectionHalfContent.astro";
 import SectionHalfImage from "@components/Section/SectionHalf/SectionHalfImage.astro";
 import weAreImage from "./assets/interior3.webp";
+import Heading from "@components/Heading/Heading.astro";
+import Button from "@components/Button/Button.astro";
 ---
 
 <SectionHalf>
-  <SectionHalfImage src={weAreImage} alt="tmp" />
+  <SectionHalfImage src={weAreImage} alt="Interior design" />
 
-  <SectionHalfContent class="bg-lightGray">
-    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Curabitur at lectus
-    eget ipsum vestibulum facilisis. Nunc maximus odio non sapien tincidunt
-    egestas. Maecenas ante felis, consequat porttitor luctus vitae, cursus eget
-    eros. Etiam malesuada lectus id risus dictum rhoncus. Donec et nibh lorem.
-    Proin id scelerisque purus. Aenean facilisis consequat urna, id ornare nisi.
-    Vestibulum tincidunt pellentesque molestie. Aliquam dictum faucibus
-    ullamcorper. Phasellus mattis lorem dui, in hendrerit urna tempus convallis.
-    In hac habitasse platea dictumst. Proin sit amet lorem posuere, scelerisque
-    neque at, ornare turpis. Cras in mi metus. Morbi sapien lorem, elementum vel
-    dictum blandit, mattis eget neque. Aliquam erat volutpat. In hac habitasse
-    platea dictumst. Praesent felis mauris, rutrum eget consequat sed, tempor
-    quis enim. Nulla facilisi. Cras aliquet commodo finibus. Aenean id lobortis
-    tortor. Morbi pulvinar purus ac sapien facilisis pulvinar. Aenean
-    sollicitudin, augue quis pharetra lacinia, turpis lectus faucibus justo, sed
-    rhoncus dolor sem non lacus. Donec mattis, velit ut porttitor suscipit,
-    velit sapien placerat ex, gravida sagittis lacus purus id felis. Fusce
-    varius imperdiet est vel mattis. Proin lacus mauris, auctor eu semper nec,
-    tempus nec odio. Sed posuere dapibus fringilla. Mauris tellus justo, mattis
-    ut lectus a, ultrices egestas sapien. Morbi pulvinar urna vel pellentesque
-    porttitor. Aenean cursus vehicula laoreet. Vestibulum aliquet lectus nisi,
-    sit amet malesuada nibh cursus vel. Morbi eleifend iaculis vehicula. Mauris
-    id nulla sed velit vulputate convallis. Sed vel viverra ante. Integer et
-    maximus turpis. Donec cursus nisl ut tellus tristique, eu ultricies dui
-    tincidunt. Sed mi magna, tempor ut lacus a, lacinia consectetur leo. Lorem
-    ipsum dolor sit amet, consectetur adipiscing elit.
+  <SectionHalfContent center class="bg-lightGray">
+    <div class="text-center max-w-[500px]">
+      <Heading level="2">How it all works</Heading>
+
+      <p class="mt-6">
+        Thanks to our work system, the client can see many different
+        possibilities, refine the concept and analyze the best solutions and
+        details.
+        <br /><br />
+        The final design is an original combination of personalized needs and expectations.
+      </p>
+
+      <Button type="link" href="#" variant="underlined" class="mt-14">
+        Our process
+      </Button>
+    </div>
   </SectionHalfContent>
 </SectionHalf>

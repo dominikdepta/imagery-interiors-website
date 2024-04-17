@@ -16,7 +16,7 @@ const { class: className, center } = Astro.props;
   <div
     class:list={[
       "w-full lg:max-w-container-1/2 px-4 lg:group-odd:pr-10 lg:group-even:pl-10",
-      center && "flex justify-center",
+      center && "flex justify-center items-center min-h-[500px]",
     ]}
   >
     <slot />
