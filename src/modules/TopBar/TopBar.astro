@@ -3,28 +3,28 @@ import TopBarMenu from "./TopBarMenu/TopBarMenu.astro";
 import TopBarMenuItem from "./TopBarMenu/TopBarMenuItem.astro";
 ---
 
-<nav class="w-full flex sticky z-20 top-0 border-b border-black">
-  <TopBarMenu class="hidden md:flex md:w-1/4">
+<nav class="w-full flex sticky lg:fixed z-20 top-0 border-b border-black">
+  <TopBarMenu class="hidden lg:flex lg:w-1/4">
     <TopBarMenuItem href="/contact" border> Contact </TopBarMenuItem>
     <TopBarMenuItem href="/projects">Projects</TopBarMenuItem>
   </TopBarMenu>
 
-  <div class="w-full md:w-2/4 p-5 flex justify-center">
+  <div class="w-full lg:w-2/4 p-5 flex justify-center">
     <a href="/" class="flex items-center">
       <img
         src="/logo.svg"
         alt="Imagery Interiors logo"
-        class="hidden md:block w-28"
+        class="hidden lg:block w-28"
       />
       <img
         src="/logo-inline.svg"
         alt="Imagery Interiors logo"
-        class="block md:hidden w-32"
+        class="block lg:hidden w-32"
       />
     </a>
   </div>
 
-  <TopBarMenu class="hidden md:flex md:w-1/4" end>
+  <TopBarMenu class="hidden lg:flex lg:w-1/4" end>
     <TopBarMenuItem href="/process">Process</TopBarMenuItem>
   </TopBarMenu>
 </nav>
