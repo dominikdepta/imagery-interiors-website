@@ -5,7 +5,7 @@ import HeroSection from "./HeroSection.astro";
 import HowItWorksSection from "./HowItWorksSection.astro";
 import InstagramSection from "./InstagramSection.astro";
 import OurTeamSection from "./OurTeamSection.astro";
-import ProjectsSection from "./ProjectsSection.astro";
+import ProjectsSection from "../ProjectsSection/ProjectsSection.astro";
 import ReviewsSection from "./ReviewsSection.astro";
 import WeAreSection from "./WeAreSection.astro";
 import BackToTop from "@modules/BackToTop/BackToTop.astro";
@@ -13,7 +13,10 @@ import BackToTop from "@modules/BackToTop/BackToTop.astro";
 
 <main>
   <HeroSection />
-  <ProjectsSection />
+  <ProjectsSection
+    title="We believe in the remarkable power of design to influence the quality of life."
+    linkHref="#"
+  />
   <WeAreSection />
   <HowItWorksSection />
   <ReviewsSection />

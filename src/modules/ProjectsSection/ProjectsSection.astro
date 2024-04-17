@@ -1,0 +1,42 @@
+---
+import Button from "@components/Button/Button.astro";
+import Heading from "@components/Heading/Heading.astro";
+import Container from "@components/Container/Container.astro";
+import SectionFull from "@components/Section/SectionFull/SectionFull.astro";
+
+interface Props {
+  title: string;
+  linkTitle?: string;
+  linkHref?: string;
+  class?: string;
+}
+
+const {
+  class: className,
+  title,
+  linkHref,
+  linkTitle = "View all",
+} = Astro.props;
+---
+
+<SectionFull class:list={["bg-lightGray", className]}>
+  <Container>
+    <div class="flex flex-col md:flex-row">
+      <Heading level="2" class="md:w-2/3">
+        {title}
+      </Heading>
+
+      {
+        linkHref && (
+          <div class="mt-6 md:mt-0 md:w-1/3 md:flex md:items-center md:justify-end">
+            <Button type="link" variant="underlined" href={linkHref}>
+              {linkTitle}
+            </Button>
+          </div>
+        )
+      }
+    </div>
+  </Container>
+
+  <div class="mt-14 md:mt-20">[Projects slider]</div>
+</SectionFull>
