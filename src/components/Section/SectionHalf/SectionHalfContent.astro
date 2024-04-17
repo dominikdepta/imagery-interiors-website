@@ -1,5 +1,10 @@
 ---
-const { class: className } = Astro.props;
+interface Props {
+  class?: string;
+  center?: boolean;
+}
+
+const { class: className, center } = Astro.props;
 ---
 
 <div
@@ -9,7 +14,10 @@ const { class: className } = Astro.props;
   ]}
 >
   <div
-    class="lg:max-w-container-1/2 px-4 lg:group-odd:pr-10 lg:group-even:pl-10"
+    class:list={[
+      "w-full lg:max-w-container-1/2 px-4 lg:group-odd:pr-10 lg:group-even:pl-10",
+      center && "flex justify-center",
+    ]}
   >
     <slot />
   </div>
