@@ -1,8 +1,20 @@
 ---
 import Container from "@components/Container/Container.astro";
 import SectionFull from "@components/Section/SectionFull/SectionFull.astro";
+import { Image } from "astro:assets";
+import logoTheGuardian from "./assets/logo-the-guardian.svg";
+import logoHomesGardens from "./assets/logo-homes-gardens.svg";
+import logoIdealHome from "./assets/logo-ideal-home.svg";
+import logoElleDecor from "./assets/logo-elle-decor.svg";
+import logoVogue from "./assets/logo-vogue.svg";
 ---
 
 <SectionFull class="bg-white">
-  <Container>[featured logos] </Container>
+  <Container class="flex justify-between gap-7 overflow-x-scroll">
+    <Image src={logoTheGuardian} alt="The Guardian" />
+    <Image src={logoHomesGardens} alt="Homes & Gardens" />
+    <Image src={logoIdealHome} alt="Ideal Home" />
+    <Image src={logoElleDecor} alt="Elle Decor" />
+    <Image src={logoVogue} alt="Vogue" />
+  </Container>
 </SectionFull>
