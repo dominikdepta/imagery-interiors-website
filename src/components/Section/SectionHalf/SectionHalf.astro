@@ -1,3 +1,7 @@
-<section class="flex flex-col lg:flex-row">
+---
+const { class: className } = Astro.props;
+---
+
+<section class:list={["flex flex-col lg:flex-row", className]}>
   <slot />
 </section>

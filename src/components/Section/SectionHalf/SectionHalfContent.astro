@@ -1,11 +1,13 @@
 ---
+export type SectionHalfContentLayout = "default" | "center" | "end";
+
 interface Props {
   class?: string;
   classInner?: string;
-  center?: boolean;
+  layout?: SectionHalfContentLayout;
 }
 
-const { class: className, classInner, center } = Astro.props;
+const { class: className, classInner, layout = "default" } = Astro.props;
 ---
 
 <div
@@ -17,7 +19,8 @@ const { class: className, classInner, center } = Astro.props;
   <div
     class:list={[
       "w-full lg:max-w-container-1/2 px-4 lg:group-odd:pr-10 lg:group-even:pl-10",
-      center && "flex justify-center items-center min-h-[500px]",
+      layout === "center" && "flex justify-center items-center min-h-[500px]",
+      layout === "end" && "lg:flex lg:flex-col lg:justify-end lg:items-start",
       classInner,
     ]}
   >
