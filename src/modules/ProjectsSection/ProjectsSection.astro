@@ -53,6 +53,6 @@ const fakeItems: ProjectsSliderItemProps[] = [...Array(15).keys()].map(
   </Container>
 
   <div class="mt-14 lg:mt-20">
-    <ProjectsSlider client:only items={fakeItems} />
+    <ProjectsSlider client:only="react" items={fakeItems} />
   </div>
 </SectionFull>
