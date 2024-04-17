@@ -14,6 +14,6 @@ interface Props {
 const { type } = Astro.props;
 ---
 
-<span class="inline-block h-2 md:h-auto [&>svg]:h-full">
+<span class="inline-block h-2 lg:h-auto [&>svg]:h-full">
   <Fragment set:html={icons[type]} />
 </span>
