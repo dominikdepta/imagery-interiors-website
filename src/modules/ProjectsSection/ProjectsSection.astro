@@ -3,6 +3,9 @@ import Button from "@components/Button/Button.astro";
 import Heading from "@components/Heading/Heading.astro";
 import Container from "@components/Container/Container.astro";
 import SectionFull from "@components/Section/SectionFull/SectionFull.astro";
+import { ProjectsSlider } from "./ProjectsSlider";
+import image2 from "../HomePage/assets/interior2.webp";
+import type { ProjectsSliderItemProps } from "./ProjectsSliderItem";
 
 interface Props {
   title: string;
@@ -17,6 +20,17 @@ const {
   linkHref,
   linkTitle = "View all",
 } = Astro.props;
+
+// TODO: replace with content collection items
+const fakeItems: ProjectsSliderItemProps[] = [...Array(15).keys()].map(
+  (item) => ({
+    img: image2.src,
+    alt: "Alt text",
+    title: `Ocean residences ${item + 1}`,
+    date: "2023",
+    href: "#",
+  }),
+);
 ---
 
 <SectionFull class:list={["bg-lightGray", className]}>
@@ -38,5 +52,7 @@ const {
     </div>
   </Container>
 
-  <div class="mt-14 md:mt-20">[Projects slider]</div>
+  <div class="mt-14 md:mt-20">
+    <ProjectsSlider client:only items={fakeItems} />
+  </div>
 </SectionFull>
