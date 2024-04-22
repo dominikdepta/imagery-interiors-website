@@ -1,0 +1,23 @@
+.swiper-pagination.swiper-pagination-horizontal.swiper-pagination-bullets {
+  display: flex;
+  justify-content: center;
+  gap: theme(gap.4);
+
+  .swiper-pagination-bullet {
+    display: inline-block;
+    border: 0;
+    background: none;
+    width: auto;
+    height: auto;
+    opacity: 1;
+    margin: 0;
+    color: theme(colors.black);
+    font-size: theme(fontSize.lg);
+    font-family: theme(fontFamily.sans);
+    font-weight: theme(fontWeight.normal);
+  }
+
+  .swiper-pagination-bullet.swiper-pagination-bullet-active {
+    color: theme(colors.white);
+  }
+}

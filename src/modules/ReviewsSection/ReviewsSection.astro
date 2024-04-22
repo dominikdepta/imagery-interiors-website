@@ -1,0 +1,42 @@
+---
+import { ReviewsSlider } from "./ReviewsSlider";
+import type { ReviewsSliderItemProps } from "./ReviewsSliderItem";
+
+// TODO: replace with content collection items
+const fakeItems: ReviewsSliderItemProps[] = [
+  {
+    author: "Katie Holmes, Private Client",
+    content:
+      "Working with Imagery Interiors was just brilliant. The project they created is both innovative and thoughtful. I would highly reccomend them.",
+  },
+  {
+    author: "NYX Hotel Warsaw, Business Client",
+    content:
+      "High quality, but human. This is how we would desribe both the cooperation with Imagery Interiors and the design they created.",
+  },
+  {
+    author: "Adam Scott, Private Client",
+    content:
+      "They delivered on everything they promised and met my expectations from start to finish. My wife is absolutely delighted with the finished product.",
+  },
+  {
+    author: "Katie Holmes, Private Client",
+    content:
+      "Working with Imagery Interiors was just brilliant. The project they created is both innovative and thoughtful. I would highly reccomend them.",
+  },
+  {
+    author: "NYX Hotel Warsaw, Business Client",
+    content:
+      "High quality, but human. This is how we would desribe both the cooperation with Imagery Interiors and the design they created.",
+  },
+  {
+    author: "Adam Scott, Private Client",
+    content:
+      "They delivered on everything they promised and met my expectations from start to finish. My wife is absolutely delighted with the finished product.",
+  },
+];
+---
+
+<div>
+  <ReviewsSlider client:only="react" items={fakeItems} />
+</div>
