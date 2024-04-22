@@ -12,7 +12,7 @@ export const ReviewsSliderItem = ({
   className,
 }: ReviewsSliderItemProps) => (
   <SliderSlide className={`w-full py-28 lg:py-52 ${className}`}>
-    <div className="px-4 max-w-4xl mx-auto text-center">
+    <div className="px-4 max-w-4xl mx-auto text-center mb-28">
       <p className="mb-20 text-sm lg:text-lg text-lightBlack uppercase">
         {author}
       </p>

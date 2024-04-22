@@ -1,7 +1,14 @@
 .swiper-pagination.swiper-pagination-horizontal.swiper-pagination-bullets {
+  position: absolute;
+  bottom: theme(spacing.28);
   display: flex;
   justify-content: center;
   gap: theme(gap.4);
+  z-index: 20;
+
+  @media screen(lg) {
+    bottom: theme(spacing.52);
+  }
 
   .swiper-pagination-bullet {
     display: inline-block;

@@ -51,20 +51,14 @@ export const ReviewsSlider = ({ items }: ReviewsSliderProps) => {
         ))}
       </Slider>
 
-      <ReviewsSliderNavButton
-        type="prev"
-        className="absolute left-0 bottom-0"
-        onClick={handlePrevBtnClick}
-      >
-        Prev
-      </ReviewsSliderNavButton>
-      <ReviewsSliderNavButton
-        type="next"
-        className="absolute right-0 bottom-0"
-        onClick={handleNextBtnClick}
-      >
-        Next
-      </ReviewsSliderNavButton>
+      <div className="absolute left-1/2 -translate-x-1/2 bottom-28 lg:bottom-52 z-10 w-full max-w-4xl hidden lg:flex justify-between">
+        <ReviewsSliderNavButton type="prev" onClick={handlePrevBtnClick}>
+          Prev
+        </ReviewsSliderNavButton>
+        <ReviewsSliderNavButton type="next" onClick={handleNextBtnClick}>
+          Next
+        </ReviewsSliderNavButton>
+      </div>
     </div>
   );
 };
