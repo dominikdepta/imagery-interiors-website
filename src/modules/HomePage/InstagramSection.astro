@@ -2,10 +2,17 @@
 import Container from "@components/Container/Container.astro";
 import Heading from "@components/Heading/Heading.astro";
 import SectionFull from "@components/Section/SectionFull/SectionFull.astro";
+import { Image } from "astro:assets";
+import image1 from "./assets/interior-instagram-1.webp";
+import image2 from "./assets/interior-instagram-2.webp";
+import image3 from "./assets/interior-instagram-3.webp";
+import image4 from "./assets/interior-instagram-4.webp";
+import image5 from "./assets/interior-instagram-5.webp";
+import image6 from "./assets/interior-instagram-6.webp";
 ---
 
 <SectionFull class="bg-lightGray">
-  <Container class="text-center">
+  <Container class="relative text-center pt-[270px] pb-[630px]">
     <Heading level="2"> Follow us on Instagram </Heading>
 
     <a
@@ -15,5 +22,12 @@ import SectionFull from "@components/Section/SectionFull/SectionFull.astro";
     >
       @imageryinteriors
     </a>
+
+    <Image src={image1} alt="Interior Instagram" />
+    <Image src={image2} alt="Interior Instagram" />
+    <Image src={image3} alt="Interior Instagram" />
+    <Image src={image4} alt="Interior Instagram" />
+    <Image src={image5} alt="Interior Instagram" />
+    <Image src={image6} alt="Interior Instagram" />
   </Container>
 </SectionFull>
