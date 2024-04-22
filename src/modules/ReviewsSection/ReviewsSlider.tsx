@@ -24,7 +24,7 @@ export const ReviewsSlider = ({ items }: ReviewsSliderProps) => {
   }, [sliderRef.current]);
 
   return (
-    <div>
+    <div className="relative">
       <Slider
         loop
         ref={sliderRef}
@@ -39,6 +39,7 @@ export const ReviewsSlider = ({ items }: ReviewsSliderProps) => {
         }}
         slidesPerView={1}
         spaceBetween={0}
+        className="z-0"
       >
         {items.map((item, i) => (
           <ReviewsSliderItem
@@ -47,20 +48,20 @@ export const ReviewsSlider = ({ items }: ReviewsSliderProps) => {
             {...item}
           />
         ))}
-
-        <button
-          className="text-2xl absolute left-0 top-0"
-          onClick={handlePrevBtnClick}
-        >
-          PREV
-        </button>
-        <button
-          className="text-2xl absolute right-0 top-0"
-          onClick={handleNextBtnClick}
-        >
-          NEXT
-        </button>
       </Slider>
+
+      <button
+        className="text-2xl absolute left-0 top-0"
+        onClick={handlePrevBtnClick}
+      >
+        PREV
+      </button>
+      <button
+        className="text-2xl absolute right-0 top-0"
+        onClick={handleNextBtnClick}
+      >
+        NEXT
+      </button>
     </div>
   );
 };
