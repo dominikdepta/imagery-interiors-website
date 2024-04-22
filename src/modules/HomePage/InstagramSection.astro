@@ -1,8 +1,19 @@
 ---
 import Container from "@components/Container/Container.astro";
+import Heading from "@components/Heading/Heading.astro";
 import SectionFull from "@components/Section/SectionFull/SectionFull.astro";
 ---
 
 <SectionFull class="bg-lightGray">
-  <Container>[instagram gallery]</Container>
+  <Container class="text-center">
+    <Heading level="2"> Follow us on Instagram </Heading>
+
+    <a
+      href="https://www.instagram.com/"
+      target="_blank"
+      class="font-serif text-3xl lg:text-5xl italic tracking-tight"
+    >
+      @imageryinteriors
+    </a>
+  </Container>
 </SectionFull>
