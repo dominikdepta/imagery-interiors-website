@@ -6,9 +6,9 @@ import {
   ReviewsSliderItem,
   type ReviewsSliderItemProps,
 } from "./ReviewsSliderItem";
-import { ReviewsSliderNavButton } from "./ReviewsSliderNav/ReviewsSliderNavButton/ReviewsSliderNavButton";
-import { ReviewsSliderNavPages } from "./ReviewsSliderNav/ReviewsSliderNavPages/ReviewsSliderNavPages";
-import { ReviewsSliderNavContainer } from "./ReviewsSliderNav/ReviewsSliderNavContainer/ReviewsSliderNavContainer";
+import { ReviewsSliderNavButton } from "./ReviewsSliderNav/ReviewsSliderNavButton";
+import { ReviewsSliderNavPages } from "./ReviewsSliderNav/ReviewsSliderNavPages";
+import { ReviewsSliderNavContainer } from "./ReviewsSliderNav/ReviewsSliderNavContainer";
 
 export interface ReviewsSliderProps {
   items: ReviewsSliderItemProps[];
