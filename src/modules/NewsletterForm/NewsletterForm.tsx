@@ -1,5 +1,6 @@
 import { Button } from "@components/Button/Button";
 import { Input } from "@components/Form/Input";
+import { Icon } from "@components/Icon";
 
 export interface NewsletterFormProps {
   className?: string;
@@ -14,7 +15,12 @@ export const NewsletterForm = ({ className }: NewsletterFormProps) => {
         className="w-full"
       />
 
-      <Button type="button" variant="primary" className="shrink-0">
+      <Button
+        type="button"
+        variant="primary"
+        className="shrink-0"
+        rightElement={<Icon type="arrow" />}
+      >
         Sign Up
       </Button>
     </form>
