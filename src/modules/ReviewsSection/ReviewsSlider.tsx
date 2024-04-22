@@ -15,6 +15,7 @@ export const ReviewsSlider = ({ items }: ReviewsSliderProps) => {
   return (
     <Slider
       loop
+      navigation
       autoplay={{ delay: 5000, pauseOnMouseEnter: true }}
       effect="fade"
       injectStylesUrls={[sliderStyles]}
