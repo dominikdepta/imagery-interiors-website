@@ -29,7 +29,6 @@ export const ReviewsSlider = ({ items }: ReviewsSliderProps) => {
 
   const handlePageClick = useCallback(
     (slide: number) => () => {
-      console.log("handlePageClick", slide);
       sliderRef.current?.swiper.slideToLoop(slide);
     },
     [sliderRef.current],
@@ -38,8 +37,6 @@ export const ReviewsSlider = ({ items }: ReviewsSliderProps) => {
   const handleSlideChange = useCallback((swiper: Swiper) => {
     setActiveIndexSync(swiper.realIndex);
   }, []);
-
-  console.log(activeIndexSync);
 
   return (
     <div className="relative">
