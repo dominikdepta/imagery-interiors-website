@@ -12,7 +12,9 @@ import image6 from "./assets/interior-instagram-6.webp";
 ---
 
 <SectionFull class="bg-lightGray">
-  <Container class="relative text-center pt-[270px] pb-[630px]">
+  <Container
+    class="relative text-center pt-[325px] pb-[370px] xl:pt-[270px] xl:pb-[630px] -my-8 lg:my-0"
+  >
     <Heading level="2"> Follow us on Instagram </Heading>
 
     <a
@@ -23,11 +25,35 @@ import image6 from "./assets/interior-instagram-6.webp";
       @imageryinteriors
     </a>
 
-    <Image src={image1} alt="Interior Instagram" />
-    <Image src={image2} alt="Interior Instagram" />
-    <Image src={image3} alt="Interior Instagram" />
-    <Image src={image4} alt="Interior Instagram" />
-    <Image src={image5} alt="Interior Instagram" />
-    <Image src={image6} alt="Interior Instagram" />
+    <Image
+      src={image1}
+      alt="Interior Instagram"
+      class="w-[185px] h-[228px] lg:w-[277px] lg:h-[342px] xl:w-[365px] xl:h-[450px] absolute right-0 top-0 object-cover object-center"
+    />
+    <Image
+      src={image2}
+      alt="Interior Instagram"
+      class="w-[123px] h-[150px] lg:w-[184px] lg:h-[225px] xl:w-[365px] xl:h-[450px] absolute left-0 top-[128px] object-cover object-center"
+    />
+    <Image
+      src={image3}
+      alt="Interior Instagram"
+      class="w-[105px] h-[105px] lg:w-[157px] lg:h-[157px] xl:w-[325px] xl:h-[325px] absolute left-[80px] top-[425px] xl:left-1/2 xl:-translate-x-1/2 xl:top-[455px] object-cover object-center"
+    />
+    <Image
+      src={image5}
+      alt="Interior Instagram"
+      class="w-[260px] h-[160px] lg:w-[390px] lg:h-[240px] xl:w-[270px] xl:h-[270px] absolute left-0 bottom-0 lg:left-1/2 lg:-translate-x-1/2 xl:left-[213px] xl:top-[675px] object-cover object-center"
+    />
+    <Image
+      src={image6}
+      alt="Interior Instagram"
+      class="w-[105px] h-[130px] lg:w-[184px] lg:h-[225px] xl:w-[270px] xl:h-[330px] absolute top-[465px] right-[16px] xl:right-[155px] xl:top-[675px] object-cover object-center"
+    />
+    <Image
+      src={image4}
+      alt="Interior Instagram"
+      class="hidden md:inline lg:hidden xl:inline w-[185px] h-[228px] xl:w-[210px] xl:h-[210px] absolute right-[275px] bottom-[45px] xl:right-[270px] xl:top-[545px] object-cover object-center"
+    />
   </Container>
 </SectionFull>
