@@ -6,6 +6,7 @@ import {
   type ReviewsSliderItemProps,
 } from "./ReviewsSliderItem";
 import sliderStyles from "./sliderStyles.css?url";
+import { ReviewsSliderNavButton } from "./ReviewsSliderNavButton/ReviewsSliderNavButton";
 
 export interface ReviewsSliderProps {
   items: ReviewsSliderItemProps[];
@@ -50,18 +51,20 @@ export const ReviewsSlider = ({ items }: ReviewsSliderProps) => {
         ))}
       </Slider>
 
-      <button
-        className="text-2xl absolute left-0 top-0"
+      <ReviewsSliderNavButton
+        type="prev"
+        className="absolute left-0 bottom-0"
         onClick={handlePrevBtnClick}
       >
-        PREV
-      </button>
-      <button
-        className="text-2xl absolute right-0 top-0"
+        Prev
+      </ReviewsSliderNavButton>
+      <ReviewsSliderNavButton
+        type="next"
+        className="absolute right-0 bottom-0"
         onClick={handleNextBtnClick}
       >
-        NEXT
-      </button>
+        Next
+      </ReviewsSliderNavButton>
     </div>
   );
 };
