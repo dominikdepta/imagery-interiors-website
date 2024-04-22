@@ -1,12 +1,14 @@
 import { Slider } from "@components/Slider/Slider";
 import { useSliderRef } from "@components/Slider/useSliderRef";
-import { useCallback } from "react";
+import { useCallback, useState } from "react";
+import type Swiper from "swiper";
 import {
   ReviewsSliderItem,
   type ReviewsSliderItemProps,
 } from "./ReviewsSliderItem";
-import sliderStyles from "./sliderStyles.css?url";
-import { ReviewsSliderNavButton } from "./ReviewsSliderNavButton/ReviewsSliderNavButton";
+import { ReviewsSliderNavButton } from "./ReviewsSliderNav/ReviewsSliderNavButton/ReviewsSliderNavButton";
+import { ReviewsSliderNavPages } from "./ReviewsSliderNav/ReviewsSliderNavPages/ReviewsSliderNavPages";
+import { ReviewsSliderNavContainer } from "./ReviewsSliderNav/ReviewsSliderNavContainer/ReviewsSliderNavContainer";
 
 export interface ReviewsSliderProps {
   items: ReviewsSliderItemProps[];
@@ -15,6 +17,7 @@ export interface ReviewsSliderProps {
 export const ReviewsSlider = ({ items }: ReviewsSliderProps) => {
   const itemClasses = ["bg-blue", "bg-brown", "bg-green"];
   const sliderRef = useSliderRef();
+  const [activeIndexSync, setActiveIndexSync] = useState(0);
 
   const handlePrevBtnClick = useCallback(() => {
     sliderRef.current?.swiper.slidePrev();
@@ -24,19 +27,31 @@ export const ReviewsSlider = ({ items }: ReviewsSliderProps) => {
     sliderRef.current?.swiper.slideNext();
   }, [sliderRef.current]);
 
+  const handlePageClick = useCallback(
+    (slide: number) => () => {
+      console.log("handlePageClick", slide);
+      sliderRef.current?.swiper.slideToLoop(slide);
+    },
+    [sliderRef.current],
+  );
+
+  const handleSlideChange = useCallback((swiper: Swiper) => {
+    setActiveIndexSync(swiper.realIndex);
+  }, []);
+
+  console.log(activeIndexSync);
+
   return (
     <div className="relative">
       <Slider
+        autoHeight
         loop
         ref={sliderRef}
         autoplay={{ delay: 5000, pauseOnMouseEnter: true }}
         effect="fade"
-        injectStylesUrls={[sliderStyles]}
-        pagination={{
-          clickable: true,
-          type: "bullets",
-          renderBullet: (index, className) =>
-            `<span class="${className}">${index + 1}</span>`,
+        initialSlide={0}
+        on={{
+          realIndexChange: handleSlideChange,
         }}
         slidesPerView={1}
         spaceBetween={0}
@@ -51,14 +66,21 @@ export const ReviewsSlider = ({ items }: ReviewsSliderProps) => {
         ))}
       </Slider>
 
-      <div className="absolute left-1/2 -translate-x-1/2 bottom-28 lg:bottom-52 z-10 w-full max-w-4xl hidden lg:flex justify-between">
+      <ReviewsSliderNavContainer>
         <ReviewsSliderNavButton type="prev" onClick={handlePrevBtnClick}>
           Prev
         </ReviewsSliderNavButton>
+
+        <ReviewsSliderNavPages
+          activeIndex={activeIndexSync}
+          itemsCount={items.length}
+          onPageClick={handlePageClick}
+        />
+
         <ReviewsSliderNavButton type="next" onClick={handleNextBtnClick}>
           Next
         </ReviewsSliderNavButton>
-      </div>
+      </ReviewsSliderNavContainer>
     </div>
   );
 };
