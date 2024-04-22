@@ -1,3 +1,4 @@
+import { Button } from "@components/Button/Button";
 import { Input } from "@components/Form/Input";
 
 export interface NewsletterFormProps {
@@ -12,7 +13,10 @@ export const NewsletterForm = ({ className }: NewsletterFormProps) => {
         aria-label="Your email"
         className="w-full"
       />
-      <button className="shrink-0">Sign Up</button>
+
+      <Button type="button" variant="primary" className="shrink-0">
+        Sign Up
+      </Button>
     </form>
   );
 };

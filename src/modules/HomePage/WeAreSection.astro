@@ -4,7 +4,7 @@ import SectionHalfContent from "@components/Section/SectionHalf/SectionHalfConte
 import SectionHalfImage from "@components/Section/SectionHalf/SectionHalfImage.astro";
 import weAreImage from "./assets/interior2.webp";
 import Heading from "@components/Heading/Heading.astro";
-import Button from "@components/Button/Button.astro";
+import { Button } from "@components/Button";
 ---
 
 <SectionHalf>
@@ -20,7 +20,7 @@ import Button from "@components/Button/Button.astro";
         create unique designs tailored to the needs of our clients.
       </p>
 
-      <Button type="link" href="#" variant="underlined" class="mt-14">
+      <Button type="link" href="#" variant="underlined" className="mt-14">
         Our story
       </Button>
     </div>
