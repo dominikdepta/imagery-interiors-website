@@ -3,6 +3,35 @@ import Container from "@components/Container/Container.astro";
 import Heading from "@components/Heading/Heading.astro";
 import SectionFull from "@components/Section/SectionFull/SectionFull.astro";
 import { AppointmentButton } from "./AppointmentButton";
+import { ProcessStages } from "@modules/ProcessStages";
+
+const processStages = [
+  {
+    title: "First meeting",
+    content:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Cursus euismod quis viverra nibh cras pulvinar mattis nunc. Tincidunt dui ut ornare lectus sit amet est placerat. Non tellus orci ac auctor.",
+  },
+  {
+    title: "Inventory",
+    content:
+      "At imperdiet dui accumsan sit amet nulla facilisi morbi tempus. Tincidunt lobortis feugiat vivamus at augue eget arcu dictum varius. Consectetur adipiscing elit pellentesque habitant morbi tristique. Massa eget egestas purus viverra accumsan in nisl nisi scelerisque.",
+  },
+  {
+    title: "Functional system",
+    content:
+      "Nunc lobortis mattis aliquam faucibus purus in massa tempor nec. Sed vulputate mi sit amet. Sapien et ligula ullamcorper malesuada proin libero. Tempor orci eu lobortis elementum nibh.",
+  },
+  {
+    title: "3D Model & visualizations",
+    content:
+      "Scelerisque viverra mauris in aliquam sem fringilla ut morbi tincidunt. Varius duis at consectetur lorem donec massa sapien faucibus et. Adipiscing commodo elit at imperdiet dui.",
+  },
+  {
+    title: "Documentation & cost estimate",
+    content:
+      "Habitant morbi tristique senectus et netus et malesuada fames. Ut placerat orci nulla pellentesque dignissim enim sit. Volutpat maecenas volutpat blandit aliquam etiam erat velit scelerisque. Enim blandit volutpat maecenas volutpat blandit aliquam etiam erat. Tristique sollicitudin nibh sit amet.",
+  },
+];
 ---
 
 <SectionFull>
@@ -12,7 +41,7 @@ import { AppointmentButton } from "./AppointmentButton";
       extended or reduced.
     </Heading>
 
-    <div>[stages]</div>
+    <ProcessStages client:load items={processStages} />
 
     <AppointmentButton className="mt-14 lg:mt-24" />
   </Container>
