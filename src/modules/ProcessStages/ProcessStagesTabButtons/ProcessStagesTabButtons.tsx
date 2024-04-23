@@ -1,5 +1,5 @@
 import { useEffect, useRef } from "react";
-import { ProcessStagesTabTitle } from "../ProcessStagesTabTitle";
+import { ProcessStagesTabButton } from "../ProcessStagesTabButton";
 import type { ProcessStagesTabButtonsProps } from "./types";
 
 export const ProcessStagesTabButtons = ({
@@ -27,12 +27,9 @@ export const ProcessStagesTabButtons = ({
     slidingBarRef.current.style.width = `${rect?.width}px`;
   }, [activeIndex]);
   return (
-    <div
-      ref={stagesTabWrapperRef}
-      className="relative flex w-full h-auto min-w-80 overflow-x-scroll"
-    >
+    <div ref={stagesTabWrapperRef} className="relative flex overflow-x-scroll">
       {items.map(({ title }, i) => (
-        <ProcessStagesTabTitle
+        <ProcessStagesTabButton
           key={i}
           isActive={i === activeIndex}
           title={title}
