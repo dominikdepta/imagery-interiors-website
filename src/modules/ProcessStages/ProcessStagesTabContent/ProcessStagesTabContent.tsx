@@ -1,3 +1,4 @@
+import { SmoothHeight } from "@components/SmoothHeight";
 import type { ReactNode } from "react";
 
 export interface ProcessStagesTabContentProps {
@@ -8,6 +9,6 @@ export const ProcessStagesTabContent = ({
   children,
 }: ProcessStagesTabContentProps) => (
   <div className="mt-6 lg:mt-10 text-base text-left lg:text-center">
-    {children}
+    <SmoothHeight>{children}</SmoothHeight>
   </div>
 );

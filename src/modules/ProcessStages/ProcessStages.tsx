@@ -18,6 +18,7 @@ export const ProcessStages = ({ items }: ProcessStagesProps) => {
       <div className="flex w-full min-w-80 overflow-x-scroll">
         {items.map(({ title }, i) => (
           <ProcessStagesTabTitle
+            key={i}
             isActive={i === activeIndex}
             title={title}
             onClick={handleTabTitleClick(i)}

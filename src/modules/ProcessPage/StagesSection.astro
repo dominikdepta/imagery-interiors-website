@@ -41,7 +41,7 @@ const processStages = [
       extended or reduced.
     </Heading>
 
-    <ProcessStages client:load items={processStages} />
+    <ProcessStages client:only="react" items={processStages} />
 
     <AppointmentButton className="mt-14 lg:mt-24" />
   </Container>
