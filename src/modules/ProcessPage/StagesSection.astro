@@ -2,13 +2,18 @@
 import Container from "@components/Container/Container.astro";
 import Heading from "@components/Heading/Heading.astro";
 import SectionFull from "@components/Section/SectionFull/SectionFull.astro";
+import { AppointmentButton } from "./AppointmentButton";
 ---
 
 <SectionFull>
-  <Container width="xl">
-    <Heading level="2" class="text-center">
+  <Container width="xl" class="flex flex-col items-center">
+    <Heading level="2" class="text-center mb-14 lg:mb-24">
       Each stage of cooperation, depending on the client’s needs, can be
       extended or reduced.
     </Heading>
+
+    <div>[stages]</div>
+
+    <AppointmentButton className="mt-14 lg:mt-24" />
   </Container>
 </SectionFull>
