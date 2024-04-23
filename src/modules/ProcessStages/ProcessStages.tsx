@@ -1,5 +1,5 @@
 import { useCallback, useState } from "react";
-import { ProcessStagesTabTitle } from "./ProcessStagesTabTitle";
+import { ProcessStagesTabButtons } from "./ProcessStagesTabButtons";
 import { ProcessStagesTabContent } from "./ProcessStagesTabContent";
 import type { ProcessStagesProps } from "./types";
 
@@ -15,16 +15,11 @@ export const ProcessStages = ({ items }: ProcessStagesProps) => {
 
   return (
     <div className="w-full">
-      <div className="flex w-full min-w-80 overflow-x-scroll">
-        {items.map(({ title }, i) => (
-          <ProcessStagesTabTitle
-            key={i}
-            isActive={i === activeIndex}
-            title={title}
-            onClick={handleTabTitleClick(i)}
-          />
-        ))}
-      </div>
+      <ProcessStagesTabButtons
+        items={items}
+        activeIndex={activeIndex}
+        onItemClick={handleTabTitleClick}
+      />
 
       <ProcessStagesTabContent>
         {items[activeIndex]?.content}
