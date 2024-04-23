@@ -14,7 +14,7 @@ export const SmoothHeight = ({ children, className }: SmoothHeightProps) => {
     contentRef.current.parentElement.style.height = `${contentRef.current.offsetHeight}px`;
   }, [contentRef]);
 
-  useDebounce(updateHeight, 250, [width, children]);
+  useDebounce(updateHeight, 150, [width, children]);
 
   return (
     <div className={`transition-all ${className}`}>
