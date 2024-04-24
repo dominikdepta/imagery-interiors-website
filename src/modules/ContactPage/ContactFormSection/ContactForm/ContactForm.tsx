@@ -6,7 +6,7 @@ import { Icon } from "@components/Icon";
 
 export const ContactForm = () => {
   return (
-    <form className="grid gap-4 md:grid-cols-2">
+    <form className="grid gap-4 md:grid-cols-2" action="/contact" method="POST">
       <Label>
         Name
         <Input />
