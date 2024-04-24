@@ -23,15 +23,17 @@ const {
 
 const projects = await getCollection("projects");
 
-const items: ProjectsSliderItemProps[] = projects.map(({ slug, data }) => ({
-  id: slug,
-  img: data.cover.image.src,
-  alt: data.cover.alt,
-  title: data.name,
-  date: `${new Date(data.dateCompletion).getFullYear()}`,
-  href: `/projects/${slug}`,
-  tags: data.tags,
-}));
+const items: ProjectsSliderItemProps[] = projects.map(
+  ({ collection, slug, data }) => ({
+    id: slug,
+    img: data.cover.image.src,
+    alt: data.cover.alt,
+    title: data.name,
+    date: `${new Date(data.dateCompletion).getFullYear()}`,
+    href: `/${collection}/${slug}`,
+    tags: data.tags,
+  }),
+);
 ---
 
 <SectionFull class:list={["bg-lightGray", className]}>
