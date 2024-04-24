@@ -2,7 +2,7 @@ import type { ButtonProps } from "./types";
 import { isButtonType, isLinkType } from "./utils";
 
 const classCommon =
-  "inline-flex items-center gap-2.5 text-sm lg:text-lg font-normal";
+  "inline-flex items-center justify-center gap-2.5 text-sm lg:text-lg font-normal";
 const classBasic = "border-b-2 border-transparent hover:border-black";
 const classPrimary =
   "bg-black py-2 px-3 lg:py-3.5 lg:px-6 text-white uppercase hover:bg-white hover:text-black transition";

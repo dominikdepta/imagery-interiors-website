@@ -1,0 +1,37 @@
+---
+import Container from "@components/Container/Container.astro";
+import Heading from "@components/Heading/Heading.astro";
+import SectionFull from "@components/Section/SectionFull/SectionFull.astro";
+import ContactDetails from "./ContactDetails.astro";
+import { ContactForm } from "./ContactForm";
+---
+
+<SectionFull class="bg-white lg:pt-52">
+  <Container>
+    <Heading level="1" size="2" class="text-center lg:max-w-2xl mx-auto">
+      Let’s talk and explore the pathway to your visions and dreams.
+    </Heading>
+
+    <div class="flex flex-col lg:flex-row w-full mt-14 lg:mt-28">
+      <div
+        class="lg:w-1/2 grid grid-cols-1 auto-rows-min sm:grid-cols-2 gap-y-12"
+      >
+        <ContactDetails title="Telephone"> 44 20 7123 4567 </ContactDetails>
+        <ContactDetails title="Email">
+          help@imageryinteriors.com
+        </ContactDetails>
+        <ContactDetails title="Our studio">
+          Lochend Road, Knightsbridge<br />
+          London G69 8BD
+        </ContactDetails>
+        <ContactDetails title="Instagram">
+          <a href="https://www.instagram.com/">@imageryinteriors</a>
+        </ContactDetails>
+      </div>
+
+      <div class="mt-14 lg:mt-0 lg:w-1/2">
+        <ContactForm client:visible />
+      </div>
+    </div>
+  </Container>
+</SectionFull>

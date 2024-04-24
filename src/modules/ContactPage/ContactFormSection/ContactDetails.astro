@@ -1,0 +1,15 @@
+---
+export interface Props {
+  class?: string;
+  title: string;
+}
+
+const { class: className, title } = Astro.props;
+---
+
+<div class:list={["text-center sm:text-left", className]}>
+  <h5 class="mb-2 uppercase text-darkGray">{title}</h5>
+  <span class="text-lightBlack">
+    <slot />
+  </span>
+</div>
