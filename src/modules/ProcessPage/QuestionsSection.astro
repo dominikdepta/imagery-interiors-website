@@ -1,8 +1,29 @@
 ---
+import { Button } from "@components/Button";
 import Container from "@components/Container/Container.astro";
+import Heading from "@components/Heading/Heading.astro";
 import SectionFull from "@components/Section/SectionFull/SectionFull.astro";
 ---
 
-<SectionFull class="bg-blue">
-  <Container> [Questions section] </Container>
+<SectionFull
+  class="bg-blue flex flex-col justify-center min-h-[400px] lg:min-h-[550px]"
+>
+  <Container class="text-center lg:max-w-[500px]">
+    <Heading level="2"> Still some questions? </Heading>
+
+    <p class="mt-4 lg:mt-6">
+      Check the list of frequently asked questions to see if we have the answer.
+      If you don’t see your question, send us a note at<br />
+      help@imageryinteriors.com
+    </p>
+
+    <Button
+      type="link"
+      variant="underlined"
+      href="/faq"
+      className="mt-6 lg:mt-14"
+    >
+      Read FAQ
+    </Button>
+  </Container>
 </SectionFull>
