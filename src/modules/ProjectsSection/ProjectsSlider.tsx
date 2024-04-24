@@ -1,13 +1,7 @@
 import { Slider } from "@components/Slider/Slider";
 import "swiper/css/bundle";
-import {
-  ProjectsSliderItem,
-  type ProjectsSliderItemProps,
-} from "./ProjectsSliderItem";
-
-export interface ProjectsSliderProps {
-  items: ProjectsSliderItemProps[];
-}
+import { ProjectsSliderItem } from "./ProjectsSliderItem";
+import type { ProjectsSliderProps } from "./types";
 
 export const ProjectsSlider = ({ items }: ProjectsSliderProps) => {
   return (

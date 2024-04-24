@@ -5,7 +5,7 @@ import Container from "@components/Container/Container.astro";
 import SectionFull from "@components/Section/SectionFull/SectionFull.astro";
 import { ProjectsSlider } from "./ProjectsSlider";
 import image2 from "../HomePage/assets/interior2.webp";
-import type { ProjectsSliderItemProps } from "./ProjectsSliderItem";
+import type { ProjectsSliderItemProps } from "./types";
 
 interface Props {
   title: string;
@@ -22,13 +22,14 @@ const {
 } = Astro.props;
 
 // TODO: replace with content collection items
-const fakeItems: ProjectsSliderItemProps[] = [...Array(15).keys()].map(
-  (item) => ({
+const fakeItems: ProjectsSliderItemProps[] = [...Array(8).keys()].map(
+  (item, i) => ({
     img: image2.src,
     alt: "Alt text",
     title: `Ocean residences ${item + 1}`,
     date: "2023",
     href: "#",
+    tags: i % 2 === 0 ? [{ name: "New" }, { name: "IDA Design Awards" }] : [],
   }),
 );
 ---
