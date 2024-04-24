@@ -1,14 +1,35 @@
 ---
+import { Button } from "@components/Button";
+import Heading from "@components/Heading/Heading.astro";
 import SectionHalf from "@components/Section/SectionHalf/SectionHalf.astro";
 import SectionHalfContent from "@components/Section/SectionHalf/SectionHalfContent.astro";
 import SectionHalfImage from "@components/Section/SectionHalf/SectionHalfImage.astro";
 import interior5 from "./assets/interior5.webp";
 ---
 
-<SectionHalf>
-  <SectionHalfContent class="bg-lightGray" classInner="lg:pt-10">
-    [Hero section]
+<SectionHalf fullHeight>
+  <SectionHalfContent layout="center" class="bg-white">
+    <div class="lg:pt-20 w-full text-center">
+      <Heading level="2"
+        >We focus on creating comfortable and functional interiors.</Heading
+      >
+
+      <p class="mt-6">
+        We are constantly improving our process to provide an efficient design
+        service. Our goal is to make the interior design process a little
+        simpler.
+      </p>
+
+      <Button
+        type="link"
+        href="/process"
+        variant="underlined"
+        className="mt-14"
+      >
+        Our process
+      </Button>
+    </div>
   </SectionHalfContent>
 
-  <SectionHalfImage src={interior5} alt="tmp" />
+  <SectionHalfImage src={interior5} alt="Interior design" />
 </SectionHalf>
