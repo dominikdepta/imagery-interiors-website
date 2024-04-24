@@ -18,8 +18,8 @@ export const ProjectsSlider = ({ items }: ProjectsSliderProps) => {
         },
       }}
     >
-      {items.map((item, i) => (
-        <ProjectsSliderItem key={i} {...item} />
+      {items.map((item) => (
+        <ProjectsSliderItem key={item.id} {...item} />
       ))}
     </Slider>
   );

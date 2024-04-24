@@ -1,10 +1,10 @@
 ---
 import { Button } from "@components/Button";
-import Heading from "@components/Heading/Heading.astro";
 import Container from "@components/Container/Container.astro";
+import Heading from "@components/Heading/Heading.astro";
 import SectionFull from "@components/Section/SectionFull/SectionFull.astro";
+import { getCollection } from "astro:content";
 import { ProjectsSlider } from "./ProjectsSlider";
-import image2 from "../HomePage/assets/interior2.webp";
 import type { ProjectsSliderItemProps } from "./types";
 
 interface Props {
@@ -21,17 +21,17 @@ const {
   linkTitle = "View all",
 } = Astro.props;
 
-// TODO: replace with content collection items
-const fakeItems: ProjectsSliderItemProps[] = [...Array(8).keys()].map(
-  (item, i) => ({
-    img: image2.src,
-    alt: "Alt text",
-    title: `Ocean residences ${item + 1}`,
-    date: "2023",
-    href: "/projects/ocean-residences",
-    tags: i % 2 === 0 ? [{ name: "New" }, { name: "IDA Design Awards" }] : [],
-  }),
-);
+const projects = await getCollection("projects");
+
+const items: ProjectsSliderItemProps[] = projects.map(({ slug, data }) => ({
+  id: slug,
+  img: data.cover.image.src,
+  alt: data.cover.alt,
+  title: data.name,
+  date: `${new Date(data.dateCompletion).getFullYear()}`,
+  href: `/projects/${slug}`,
+  tags: data.tags,
+}));
 ---
 
 <SectionFull class:list={["bg-lightGray", className]}>
@@ -54,6 +54,6 @@ const fakeItems: ProjectsSliderItemProps[] = [...Array(8).keys()].map(
   </Container>
 
   <div class="mt-14 lg:mt-20">
-    <ProjectsSlider client:only="react" items={fakeItems} />
+    <ProjectsSlider client:only="react" items={items} />
   </div>
 </SectionFull>

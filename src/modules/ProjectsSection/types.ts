@@ -3,12 +3,13 @@ export interface ProjectsSliderItemTag {
 }
 
 export interface ProjectsSliderItemProps {
+  id: string;
   alt: string;
   href: string;
   img: string;
   title: string;
   date?: string;
-  tags?: ProjectsSliderItemTag[];
+  tags?: ProjectsSliderItemTag[] | undefined;
 }
 
 export interface ProjectsSliderProps {
