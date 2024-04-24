@@ -19,7 +19,7 @@ const { class: className, classInner, layout = "default" } = Astro.props;
   <div
     class:list={[
       "w-full lg:max-w-container-1/2 px-4 lg:group-odd:pr-10 lg:group-even:pl-10",
-      layout === "center" && "flex justify-center items-center min-h-[500px]",
+      layout === "center" && "flex justify-center items-center",
       layout === "end" && "lg:flex lg:flex-col lg:justify-end lg:items-start",
       classInner,
     ]}
