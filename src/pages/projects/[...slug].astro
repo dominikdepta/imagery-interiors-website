@@ -1,5 +1,6 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import ProjectPage from "@modules/projects/ProjectPage/ProjectPage.astro";
 import { getCollection } from "astro:content";
 
 export const getStaticPaths = async () => {
@@ -11,14 +12,14 @@ export const getStaticPaths = async () => {
     },
     props: {
       project,
+      projects,
     },
   }));
 };
 
-const { project } = Astro.props;
-const { Content } = await project.render();
+const { project, projects } = Astro.props;
 ---
 
 <Layout title={`${project.data.name} - ${project.data.title}`}>
-  <Content />
+  <ProjectPage project={project} projects={projects} />
 </Layout>

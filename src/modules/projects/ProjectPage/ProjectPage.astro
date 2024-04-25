@@ -1,6 +1,15 @@
 ---
 import BackToTop from "@modules/common/BackToTop/BackToTop.astro";
 import Footer from "@modules/common/Footer/Footer.astro";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  project: CollectionEntry<"projects">;
+  projects: CollectionEntry<"projects">[];
+}
+
+// const { project, projects } = Astro.props;
+// const { Content } = await project.render();
 ---
 
 <main>
