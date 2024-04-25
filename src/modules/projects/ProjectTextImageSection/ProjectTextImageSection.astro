@@ -1,0 +1,37 @@
+---
+import Container from "@components/Container/Container.astro";
+import Heading from "@components/Heading/Heading.astro";
+import SectionFull from "@components/Section/SectionFull/SectionFull.astro";
+import type { ImageMetadata } from "astro";
+import { Image } from "astro:assets";
+
+interface Props {
+  alt: string;
+  image: ImageMetadata;
+  text: string;
+  title: string;
+}
+
+const { image, alt, title, text } = Astro.props;
+---
+
+<SectionFull class="bg-white">
+  <Container class="flex items-center justify-between">
+    <div class="max-w-md mx-auto">
+      <Heading level="4" size="3">
+        {title}
+      </Heading>
+
+      <p class="mt-6">
+        {text}
+      </p>
+    </div>
+
+    <Image
+      src={image}
+      alt={alt}
+      class="w-full lg:max-w-3xl"
+      class="aspect-[1/1.2] max-w-[500px] object-cover"
+    />
+  </Container>
+</SectionFull>
