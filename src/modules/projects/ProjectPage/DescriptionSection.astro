@@ -1,0 +1,45 @@
+---
+import Container from "@components/Container/Container.astro";
+import Heading from "@components/Heading/Heading.astro";
+import SectionFull from "@components/Section/SectionFull/SectionFull.astro";
+import { hasItems } from "@utils/hasItems";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  project: CollectionEntry<"projects">;
+}
+
+const { project } = Astro.props;
+const { data, render } = project;
+const { Content } = await render();
+---
+
+<SectionFull class="bg-brown">
+  <Container class="flex flex-wrap gap-10">
+    {
+      hasItems(data.features) && (
+        <div class="grid grid-cols-2 lg:grid-cols-1 gap-10 lg:w-1/4 order-2 lg:order-1">
+          {data.features.map(({ name, value }) => (
+            <div class="flex flex-col">
+              <span class="text-black uppercase font-semibold">{name}</span>
+              <span class="text-lightBlack mt-1">{value}</span>
+            </div>
+          ))}
+        </div>
+      )
+    }
+
+    <div
+      class:list={[
+        hasItems(data.features) && "lg:w-3/4 order-1 lg:order-2",
+        "lg:max-w-3xl",
+      ]}
+    >
+      <Heading level="3" size="2">{data.title}</Heading>
+
+      <div class="mt-6 lg:mt-14">
+        <Content />
+      </div>
+    </div>
+  </Container>
+</SectionFull>
