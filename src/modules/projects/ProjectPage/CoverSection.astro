@@ -1,0 +1,20 @@
+---
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  project: CollectionEntry<"projects">;
+}
+
+const { project } = Astro.props;
+---
+
+<div>
+  <Image
+    src={project.data.cover.image}
+    alt={project.data.cover.alt}
+    densities={[1.5, 2]}
+    quality="high"
+    class="w-full"
+  />
+</div>

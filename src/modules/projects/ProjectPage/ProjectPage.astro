@@ -3,6 +3,7 @@ import BackToTop from "@modules/common/BackToTop/BackToTop.astro";
 import Footer from "@modules/common/Footer/Footer.astro";
 import type { CollectionEntry } from "astro:content";
 import HeadingSection from "./HeadingSection.astro";
+import CoverSection from "./CoverSection.astro";
 
 interface Props {
   project: CollectionEntry<"projects">;
@@ -15,7 +16,7 @@ const { project, projects } = Astro.props;
 
 <main>
   <HeadingSection project={project} projects={projects} />
-  <div>[Cover]</div>
+  <CoverSection project={project} />
   <div>[Features & description]</div>
   <div>[Image]</div>
   <div>[Image & text]</div>
