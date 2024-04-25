@@ -24,7 +24,16 @@ tags:
 ---
 import ProjectImageSection from "@modules/projects/ProjectImageSection/ProjectImageSection.astro";
 import ProjectTextImageSection from "@modules/projects/ProjectTextImageSection/ProjectTextImageSection.astro";
+import ProjectGallerySection from "@modules/projects/ProjectGallerySection/ProjectGallerySection.astro"
 import image from "./images/cozy-retreat-cover.jpg"
 
 <ProjectImageSection image={image} alt="Cozy living room interior design" />
 <ProjectTextImageSection image={image} alt="Broadchurch apartment interior design" title="Charming Tranquility" text="Discover rustic charm and cozy comfort in the heart of the Cotswolds. Imagery Interiors invites you to unwind in this tranquil retreat, where every corner tells a story of warmth and character." />
+<ProjectGallerySection images={[
+    { image, alt: "Cozy living room interior design" },
+    { image, alt: "Cozy living room interior design" },
+    { image, alt: "Cozy living room interior design" },
+    { image, alt: "Cozy living room interior design" },
+    { image, alt: "Cozy living room interior design" },
+  ]}
+/>

@@ -1,0 +1,30 @@
+---
+import Container from "@components/Container/Container.astro";
+import SectionFull from "@components/Section/SectionFull/SectionFull.astro";
+import {
+  ProjectGallerySlider,
+  type ProjectGallerySliderItemProps,
+} from "../ProjectGallerySlider";
+
+export interface ProjectGalleryImage {
+  image: ImageMetadata;
+  alt: string;
+}
+
+export interface Props {
+  images: ProjectGalleryImage[];
+}
+
+const { images = [] } = Astro.props;
+
+const items: ProjectGallerySliderItemProps[] = images.map(({ image, alt }) => ({
+  img: image.src,
+  alt,
+}));
+---
+
+<SectionFull class="bg-lightGray">
+  <Container>
+    <ProjectGallerySlider client:only="react" items={items} />
+  </Container>
+</SectionFull>

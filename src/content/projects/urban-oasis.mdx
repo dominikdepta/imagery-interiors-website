@@ -24,7 +24,16 @@ tags:
 ---
 import ProjectImageSection from "@modules/projects/ProjectImageSection/ProjectImageSection.astro";
 import ProjectTextImageSection from "@modules/projects/ProjectTextImageSection/ProjectTextImageSection.astro";
+import ProjectGallerySection from "@modules/projects/ProjectGallerySection/ProjectGallerySection.astro"
 import image from "./images/urban-oasis-cover.jpg"
 
 <ProjectImageSection image={image} alt="Urban interior design" />
 <ProjectTextImageSection image={image} alt="Urban interior design" title="Cityscape Chic" text="Cityscape Designs presents Urban Oasis, a sleek Manhattan masterpiece redefining urban living. Experience contemporary elegance in this open-plan haven, where modern design meets the pulse of New York City." />
+<ProjectGallerySection images={[
+    { image, alt: "Urban interior design" },
+    { image, alt: "Urban interior design" },
+    { image, alt: "Urban interior design" },
+    { image, alt: "Urban interior design" },
+    { image, alt: "Urban interior design" },
+  ]}
+/>

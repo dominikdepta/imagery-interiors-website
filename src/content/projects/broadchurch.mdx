@@ -23,7 +23,16 @@ tags:
 ---
 import ProjectImageSection from "@modules/projects/ProjectImageSection/ProjectImageSection.astro";
 import ProjectTextImageSection from "@modules/projects/ProjectTextImageSection/ProjectTextImageSection.astro";
+import ProjectGallerySection from "@modules/projects/ProjectGallerySection/ProjectGallerySection.astro"
 import image from "./images/broadchurch-cover.png"
 
 <ProjectImageSection image={image} alt="Broadchurch apartment interior design" />
 <ProjectTextImageSection image={image} alt="Broadchurch apartment interior design" title="Design for life" text="The Imagery Interiors team of designers work to interpret each client’s passions and style, providing innovative architecture to include spatial plans, curating furniture, textiles and art." />
+<ProjectGallerySection images={[
+    { image, alt: "Broadchurch apartment interior design" },
+    { image, alt: "Broadchurch apartment interior design" },
+    { image, alt: "Broadchurch apartment interior design" },
+    { image, alt: "Broadchurch apartment interior design" },
+    { image, alt: "Broadchurch apartment interior design" },
+  ]}
+/>
