@@ -16,7 +16,9 @@ const { image, alt, title, text } = Astro.props;
 ---
 
 <SectionFull class="bg-lightGray">
-  <Container class="flex items-center justify-between">
+  <Container
+    class="flex flex-col lg:flex-row gap-10 items-center justify-between"
+  >
     <div class="max-w-md mx-auto">
       <Heading level="4" size="3">
         {title}
