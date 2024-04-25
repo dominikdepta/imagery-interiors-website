@@ -1,9 +1,19 @@
+import { useMemo } from "react";
 import { Slider } from "@components/Slider/Slider";
 import "swiper/css/bundle";
 import { ProjectsSliderItem } from "./ProjectsSliderItem";
 import type { ProjectsSliderProps } from "./types";
 
 export const ProjectsSlider = ({ items }: ProjectsSliderProps) => {
+  const minSlidesCount = 7;
+  const slides = useMemo(
+    () =>
+      items.length < minSlidesCount
+        ? [...items, ...items.slice(0, minSlidesCount - items.length)]
+        : items,
+    [items],
+  );
+
   return (
     <Slider
       centeredSlides={true}
@@ -18,8 +28,8 @@ export const ProjectsSlider = ({ items }: ProjectsSliderProps) => {
         },
       }}
     >
-      {items.map((item) => (
-        <ProjectsSliderItem key={item.id} {...item} />
+      {slides.map((slide) => (
+        <ProjectsSliderItem key={slide.id} {...slide} />
       ))}
     </Slider>
   );
