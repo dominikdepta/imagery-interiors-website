@@ -4,8 +4,10 @@ import Container from "@components/Container/Container.astro";
 import Heading from "@components/Heading/Heading.astro";
 import SectionFull from "@components/Section/SectionFull/SectionFull.astro";
 import { getCollection } from "astro:content";
-import { ProjectsSlider } from "./ProjectsSlider";
-import type { ProjectsSliderItemProps } from "./types";
+import {
+  ProjectsSlider,
+  type ProjectsSliderItemProps,
+} from "../ProjectsSlider";
 
 interface Props {
   title: string;
