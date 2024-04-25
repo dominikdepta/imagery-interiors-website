@@ -4,7 +4,7 @@ title: "Charm, Comfort, and Character: Transforming Houses into Homes."
 dateCompletion: 2024-05-12
 dateCreated: 2024-01-02
 cover:
-  image: "./images/cozy-retreat-cover.webp"
+  image: "./images/cozy-retreat-cover.jpg"
   alt: "Cozy Retreat bedroom interior design"
 # images:
 features:

@@ -4,7 +4,7 @@ title: "Sophistication and Comfort: The Essence of Luxury Living."
 dateCompletion: 2024-01-20
 dateCreated: 2023-08-10
 cover:
-  image: "./images/elegant-abode-cover.webp"
+  image: "./images/elegant-abode-cover.jpg"
   alt: "Elegant Abode living room interior design"
 # images:
 features:

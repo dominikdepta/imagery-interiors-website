@@ -4,7 +4,7 @@ title: "Functionality, usability, durability: three features that form the core 
 dateCompletion: 2023-03-03
 dateCreated: 2023-05-15
 cover:
-  image: "./images/broadchurch-cover.webp"
+  image: "./images/broadchurch-cover.png"
   alt: "Broadchurch living room interior design"
 # images:
 features:

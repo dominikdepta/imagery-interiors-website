@@ -4,7 +4,7 @@ title: "Contemporary Elegance: Redefining Urban Living."
 dateCompletion: 2024-09-28
 dateCreated: 2024-03-15
 cover:
-  image: "./images/urban-oasis-cover.webp"
+  image: "./images/urban-oasis-cover.jpg"
   alt: "Urban Oasis kitchen interior design"
 # images:
 features:
