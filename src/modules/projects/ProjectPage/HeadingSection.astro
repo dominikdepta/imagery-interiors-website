@@ -1,0 +1,42 @@
+---
+import Container from "@components/Container/Container.astro";
+import Heading from "@components/Heading/Heading.astro";
+import SectionFull from "@components/Section/SectionFull/SectionFull.astro";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  project: CollectionEntry<"projects">;
+  projects: CollectionEntry<"projects">[];
+}
+
+const { project, projects } = Astro.props;
+---
+
+<SectionFull class="bg-white">
+  <Container class="lg:pt-20 w-full lg:max-w-5xl mx-auto text-center">
+    <Heading level="2"
+      >Our focus is <span class="italic tracking-tight">client</span> experience</Heading
+    >
+
+    <p class="mt-8 lg:mt-10 lg:text-lg">
+      The Imagery Interiors team of designers work to interpret each client’s
+      passions and style, providing innovative interior architecture to include
+      spatial plans, curating furniture, textiles and art. While the majority of
+      work is focused on private and commercial developments in London, recent
+      projects include locations in South of France and USA.
+    </p>
+
+    <div class="flex justify-evenly gap-4 flex-wrap items-end mt-10 lg:mt-20">
+      {
+        projects.map(({ collection, slug, data }) => (
+          <a
+            href={`/${collection}/${slug}`}
+            class={`${project.slug === slug ? "text-lightBlack underline" : "text-darkGray"} max-w-36 text-lg`}
+          >
+            {data.name}
+          </a>
+        ))
+      }
+    </div>
+  </Container>
+</SectionFull>
