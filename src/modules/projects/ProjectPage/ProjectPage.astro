@@ -12,13 +12,14 @@ interface Props {
 }
 
 const { project, projects } = Astro.props;
-// const { Content } = await project.render();
+const { Content } = await project.render();
 ---
 
 <main>
   <HeadingSection project={project} projects={projects} />
   <CoverSection project={project} />
   <DescriptionSection project={project} />
+  <Content />
   <div>[Image]</div>
   <div>[Image & text]</div>
   <div>[Gallery (slider)]</div>

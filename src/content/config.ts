@@ -8,11 +8,11 @@ const projects = defineCollection({
       title: z.string(),
       dateCompletion: z.date(),
       dateCreated: z.date(),
+      description: z.string(),
       cover: z.object({
         image: image(),
         alt: z.string(),
       }),
-      images: z.array(image()).optional(),
       features: z
         .array(
           z.object({

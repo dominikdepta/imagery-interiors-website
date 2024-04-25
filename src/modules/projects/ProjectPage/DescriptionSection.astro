@@ -10,8 +10,7 @@ interface Props {
 }
 
 const { project } = Astro.props;
-const { data, render } = project;
-const { Content } = await render();
+const { data } = project;
 ---
 
 <SectionFull class="bg-brown">
@@ -37,9 +36,7 @@ const { Content } = await render();
     >
       <Heading level="3" size="2">{data.title}</Heading>
 
-      <div class="mt-6 lg:mt-14">
-        <Content />
-      </div>
+      {data.description && <div class="mt-6 lg:mt-14">{data.description}</div>}
     </div>
   </Container>
 </SectionFull>
