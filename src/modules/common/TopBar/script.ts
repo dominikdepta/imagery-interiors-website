@@ -38,6 +38,7 @@ mobileButtonElem?.addEventListener("click", () => {
   if (!isMobileMenuOpen) {
     mobileMenuElem?.classList.remove("hidden");
     navElem?.classList.add(className);
+    mobileButtonElem?.classList.add("active");
     document.documentElement.style["overflow"] = "hidden";
 
     setTimeout(() => {
@@ -49,6 +50,7 @@ mobileButtonElem?.addEventListener("click", () => {
     mobileMenuElem?.classList.add("opacity-0");
     mobileMenuElem?.classList.remove("opacity-100");
     navElem?.classList.remove(className);
+    mobileButtonElem?.classList.remove("active");
     document.documentElement.style["overflow"] = "auto";
 
     setTimeout(() => {
