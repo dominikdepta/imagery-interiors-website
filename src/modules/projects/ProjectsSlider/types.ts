@@ -3,7 +3,6 @@ export interface ProjectsSliderItemTag {
 }
 
 export interface ProjectsSliderItemProps {
-  id: string;
   alt: string;
   href: string;
   img: string;

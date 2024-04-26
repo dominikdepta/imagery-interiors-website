@@ -24,18 +24,20 @@ const {
 } = Astro.props;
 
 const projects = await getCollection("projects");
+const projectsByDateCompletion = [...projects].sort(
+  (a, b) => b.data.dateCompletion.getTime() - a.data.dateCompletion.getTime(),
+);
 
-const items: ProjectsSliderItemProps[] = projects.map(
-  ({ collection, slug, data }) => ({
-    id: slug,
+const items: ProjectsSliderItemProps[] = projectsByDateCompletion
+  .slice(0, 16)
+  .map(({ collection, slug, data }) => ({
     img: data.cover.image.src,
     alt: data.cover.alt,
     title: data.name,
     date: `${new Date(data.dateCompletion).getFullYear()}`,
     href: `/${collection}/${slug}`,
     tags: data.tags,
-  }),
-);
+  }));
 ---
 
 <SectionFull class:list={["bg-lightGray", className]}>
