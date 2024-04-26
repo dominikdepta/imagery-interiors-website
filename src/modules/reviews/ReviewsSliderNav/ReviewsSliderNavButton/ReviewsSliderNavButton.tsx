@@ -1,11 +1,7 @@
-import { memo, type ButtonHTMLAttributes } from "react";
+import { memo } from "react";
 import arrowLeft from "./navigationArrowLeft.svg";
 import arrowRight from "./navigationArrowRight.svg";
-
-export interface ReviewsSliderNavButtonProps
-  extends Omit<ButtonHTMLAttributes<HTMLButtonElement>, "type"> {
-  type: "prev" | "next";
-}
+import type { ReviewsSliderNavButtonProps } from "./types";
 
 export const ReviewsSliderNavButton = memo(
   ({
