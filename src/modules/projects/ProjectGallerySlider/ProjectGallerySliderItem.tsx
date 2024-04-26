@@ -6,6 +6,6 @@ export const ProjectGallerySliderItem = ({
   alt,
 }: ProjectGallerySliderItemProps) => (
   <SliderSlide>
-    <img src={img} alt={alt} />
+    <img src={img} alt={alt} className="w-full" />
   </SliderSlide>
 );
