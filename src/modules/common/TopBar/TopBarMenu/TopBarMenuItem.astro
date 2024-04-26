@@ -1,11 +1,13 @@
 ---
+import { isActivePath } from "@utils/isActivePath";
+
 interface Props {
   href: string;
   border?: boolean;
 }
 
 const { border = false, href } = Astro.props;
-const isActive = Astro.url.pathname.split("/")[1] === href.split("/")[1];
+const isActive = isActivePath(Astro, href);
 ---
 
 <li>

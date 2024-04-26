@@ -1,12 +1,13 @@
 ---
 import { Button } from "@components/Button";
+import { isActivePath } from "@utils/isActivePath";
 
 interface Props {
   href: string;
 }
 
 const { href } = Astro.props;
-const isActive = Astro.url.pathname.split("/")[1] === href.split("/")[1];
+const isActive = isActivePath(Astro, href);
 ---
 
 <Button
