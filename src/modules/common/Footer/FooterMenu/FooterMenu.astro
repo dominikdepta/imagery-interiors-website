@@ -3,6 +3,8 @@ import { getBaseUrl } from "@utils/getBaseUrl";
 import FooterMenuItem from "./FooterMenuItem.astro";
 import FooterMenuList from "./FooterMenuList.astro";
 import FooterMenuTitle from "./FooterMenuTitle.astro";
+
+const baseUrl = getBaseUrl();
 ---
 
 <nav class="flex justify-between">
@@ -11,10 +13,10 @@ import FooterMenuTitle from "./FooterMenuTitle.astro";
       <FooterMenuTitle>Studio</FooterMenuTitle>
       <FooterMenuList>
         <FooterMenuItem
-          ><a href={`${getBaseUrl()}/process`}>Process</a></FooterMenuItem
+          ><a href={`${baseUrl}/process`}>Process</a></FooterMenuItem
         >
         <FooterMenuItem
-          ><a href={`${getBaseUrl()}/projects`}>Projects</a></FooterMenuItem
+          ><a href={`${baseUrl}/projects`}>Projects</a></FooterMenuItem
         >
       </FooterMenuList>
     </div>
@@ -23,7 +25,7 @@ import FooterMenuTitle from "./FooterMenuTitle.astro";
       <FooterMenuTitle>Connect</FooterMenuTitle>
       <FooterMenuList>
         <FooterMenuItem
-          ><a href={`${getBaseUrl()}/contact`}>Contact</a></FooterMenuItem
+          ><a href={`${baseUrl}/contact`}>Contact</a></FooterMenuItem
         >
       </FooterMenuList>
     </div>

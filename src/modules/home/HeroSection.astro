@@ -6,6 +6,8 @@ import SectionHalfContent from "@components/Section/SectionHalf/SectionHalfConte
 import SectionHalfImage from "@components/Section/SectionHalf/SectionHalfImage.astro";
 import { getBaseUrl } from "@utils/getBaseUrl";
 import heroImage from "./assets/hero-interior.webp";
+
+const baseUrl = getBaseUrl();
 ---
 
 <SectionHalf fullHeight>
@@ -25,7 +27,7 @@ import heroImage from "./assets/hero-interior.webp";
       type="link"
       variant="underlined"
       className="inline-block mt-6 lg:mt-14"
-      href={`${getBaseUrl()}/`}
+      href={`${baseUrl}/`}
     >
       Read more
     </Button>

@@ -1,8 +1,9 @@
 ---
 import { getBaseUrl } from "@utils/getBaseUrl";
+const baseUrl = getBaseUrl();
 ---
 
 <div class="flex gap-8 mt-8 text-sm text-darkGray">
   <span>&copy; ImageryInteriors 2024</span>
-  <span><a href={`${getBaseUrl()}/privacy`}>Privacy & Cookies</a></span>
+  <span><a href={`${baseUrl}/privacy`}>Privacy & Cookies</a></span>
 </div>

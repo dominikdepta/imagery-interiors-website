@@ -12,6 +12,7 @@ interface Props {
 
 const { projects } = Astro.props;
 const projectsToShow = projects.slice(0, 2);
+const baseUrl = getBaseUrl();
 ---
 
 <SectionFull class="bg-white">
@@ -25,7 +26,7 @@ const projectsToShow = projects.slice(0, 2);
     >
       {
         projectsToShow.map(({ collection, slug, data }) => (
-          <a href={`${getBaseUrl()}/${collection}/${slug}`} class="block">
+          <a href={`${baseUrl}/${collection}/${slug}`} class="block">
             <Image
               src={data.cover.image}
               alt={data.cover.alt}

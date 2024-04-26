@@ -4,6 +4,8 @@ import Container from "@components/Container/Container.astro";
 import Heading from "@components/Heading/Heading.astro";
 import SectionFull from "@components/Section/SectionFull/SectionFull.astro";
 import { getBaseUrl } from "@utils/getBaseUrl";
+
+const baseUrl = getBaseUrl();
 ---
 
 <SectionFull
@@ -21,7 +23,7 @@ import { getBaseUrl } from "@utils/getBaseUrl";
     <Button
       type="link"
       variant="underlined"
-      href={`${getBaseUrl()}/faq`}
+      href={`${baseUrl}/faq`}
       className="mt-6 lg:mt-14"
     >
       Read FAQ

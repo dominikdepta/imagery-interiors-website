@@ -4,6 +4,8 @@ import MobileMenu from "./MobileMenu/MobileMenu.astro";
 import MobileMenuButton from "./MobileMenu/MobileMenuButton.astro";
 import TopBarMenu from "./TopBarMenu/TopBarMenu.astro";
 import TopBarMenuItem from "./TopBarMenu/TopBarMenuItem.astro";
+
+const baseUrl = getBaseUrl();
 ---
 
 <script src="./script.ts"></script>
@@ -13,24 +15,22 @@ import TopBarMenuItem from "./TopBarMenu/TopBarMenuItem.astro";
     class="top-bar-nav w-full flex border-b transition-colors duration-300 border-black"
   >
     <TopBarMenu class="hidden lg:flex lg:w-1/4">
-      <TopBarMenuItem href={`${getBaseUrl()}/contact`} border
-        >Contact</TopBarMenuItem
+      <TopBarMenuItem href={`${baseUrl}/contact`} border>Contact</TopBarMenuItem
       >
-      <TopBarMenuItem href={`${getBaseUrl()}/projects`}>Projects</TopBarMenuItem
-      >
+      <TopBarMenuItem href={`${baseUrl}/projects`}>Projects</TopBarMenuItem>
     </TopBarMenu>
 
     <div class="relative w-full lg:w-2/4 p-5 flex justify-center">
       <MobileMenuButton />
 
-      <a href={`${getBaseUrl()}/" class="flex items-center`}>
+      <a href={baseUrl ? baseUrl : "/"} class="flex items-center">
         <img
-          src={`${getBaseUrl()}/logo.svg`}
+          src={`${baseUrl}/logo.svg`}
           alt="Imagery Interiors logo"
           class="hidden lg:block w-28"
         />
         <img
-          src={`${getBaseUrl()}/logo-inline.svg`}
+          src={`${baseUrl}/logo-inline.svg`}
           alt="Imagery Interiors logo"
           class="block lg:hidden w-32"
         />
@@ -38,7 +38,7 @@ import TopBarMenuItem from "./TopBarMenu/TopBarMenuItem.astro";
     </div>
 
     <TopBarMenu class="hidden lg:flex lg:w-1/4" end>
-      <TopBarMenuItem href={`${getBaseUrl()}/process`}>Process</TopBarMenuItem>
+      <TopBarMenuItem href={`${baseUrl}/process`}>Process</TopBarMenuItem>
     </TopBarMenu>
   </div>
 

@@ -6,6 +6,8 @@ import SectionHalfContent from "@components/Section/SectionHalf/SectionHalfConte
 import SectionHalfImage from "@components/Section/SectionHalf/SectionHalfImage.astro";
 import { getBaseUrl } from "@utils/getBaseUrl";
 import interior5 from "./assets/interior5.webp";
+
+const baseUrl = getBaseUrl();
 ---
 
 <SectionHalf fullHeight>
@@ -23,7 +25,7 @@ import interior5 from "./assets/interior5.webp";
 
       <Button
         type="link"
-        href={`${getBaseUrl()}/process`}
+        href={`${baseUrl}/process`}
         variant="underlined"
         className="mt-14"
       >

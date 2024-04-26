@@ -10,13 +10,15 @@ import HeroSection from "./HeroSection.astro";
 import HowItWorksSection from "./HowItWorksSection.astro";
 import OurTeamSection from "./OurTeamSection.astro";
 import WeAreSection from "./WeAreSection.astro";
+
+const baseUrl = getBaseUrl();
 ---
 
 <main>
   <HeroSection />
   <ProjectsSection
     title="We believe in the remarkable power of design to influence the quality of life."
-    linkHref={`${getBaseUrl()}/projects`}
+    linkHref={`${baseUrl}/projects`}
   />
   <WeAreSection />
   <HowItWorksSection />

@@ -7,6 +7,8 @@ import QuestionsSection from "./QuestionsSection.astro";
 import HelpSection from "./HelpSection.astro";
 import ProjectsSection from "@modules/projects/ProjectsSection/ProjectsSection.astro";
 import { getBaseUrl } from "@utils/getBaseUrl";
+
+const baseUrl = getBaseUrl();
 ---
 
 <main>
@@ -14,7 +16,7 @@ import { getBaseUrl } from "@utils/getBaseUrl";
   <StagesSection />
   <ProjectsSection
     title="Need some inspiration? Right this way to see our recent projects."
-    linkHref={`${getBaseUrl()}/projects`}
+    linkHref={`${baseUrl}/projects`}
   />
   <QuestionsSection />
   <HelpSection />

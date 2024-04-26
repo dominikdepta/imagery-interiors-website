@@ -6,6 +6,8 @@ import SectionHalfContent from "@components/Section/SectionHalf/SectionHalfConte
 import SectionHalfImage from "@components/Section/SectionHalf/SectionHalfImage.astro";
 import { getBaseUrl } from "@utils/getBaseUrl";
 import weAreImage from "./assets/interior2.webp";
+
+const baseUrl = getBaseUrl();
 ---
 
 <SectionHalf>
@@ -26,7 +28,7 @@ import weAreImage from "./assets/interior2.webp";
 
       <Button
         type="link"
-        href={`${getBaseUrl()}/story" variant="underlined" className="mt-14`}
+        href={`${baseUrl}/story" variant="underlined" className="mt-14`}
       >
         Our story
       </Button>
