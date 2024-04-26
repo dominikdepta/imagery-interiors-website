@@ -7,7 +7,7 @@ interface Props {
 }
 
 const { border = false, href } = Astro.props;
-const isActive = isActivePath(Astro, href);
+const isActive = isActivePath(Astro, href, 1);
 ---
 
 <li>

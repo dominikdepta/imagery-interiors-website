@@ -7,7 +7,7 @@ interface Props {
 }
 
 const { href } = Astro.props;
-const isActive = isActivePath(Astro, href);
+const isActive = isActivePath(Astro, href, 1);
 ---
 
 <Button
