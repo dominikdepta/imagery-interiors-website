@@ -1,0 +1,25 @@
+---
+import Container from "@components/Container/Container.astro";
+import Heading from "@components/Heading/Heading.astro";
+import SectionFull from "@components/Section/SectionFull/SectionFull.astro";
+import { ContactUsButton } from "./ContactUsButton";
+---
+
+<SectionFull class="bg-lightGray text-center">
+  <Container>
+    <div class="max-w-xl mx-auto">
+      <Heading level="3" size="2">
+        Our team is here to design the <span class="italic tracking-tight"
+          >perfect</span
+        > living space for you
+      </Heading>
+
+      <p class="mt-6 mx-auto max-w-[380px]">
+        With over 20 years of experience we are aware that every project is
+        unique.
+      </p>
+
+      <ContactUsButton className="mt-14" />
+    </div>
+  </Container>
+</SectionFull>

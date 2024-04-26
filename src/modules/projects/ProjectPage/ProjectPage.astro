@@ -6,6 +6,7 @@ import HeadingSection from "./HeadingSection.astro";
 import CoverSection from "./CoverSection.astro";
 import DescriptionSection from "./DescriptionSection.astro";
 import MoreProjectsSection from "./MoreProjectsSection.astro";
+import OurTeamSection from "./OurTeamSection.astro";
 
 interface Props {
   project: CollectionEntry<"projects">;
@@ -36,7 +37,7 @@ const moreProjects =
       <MoreProjectsSection projects={moreProjects} />
     )
   }
-  <div>[Our team]</div>
+  <OurTeamSection />
   <BackToTop />
   <Footer />
 </main>
