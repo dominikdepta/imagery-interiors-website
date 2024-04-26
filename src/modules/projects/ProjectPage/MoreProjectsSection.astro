@@ -2,6 +2,7 @@
 import Container from "@components/Container/Container.astro";
 import Heading from "@components/Heading/Heading.astro";
 import SectionFull from "@components/Section/SectionFull/SectionFull.astro";
+import { getBaseUrl } from "@utils/getBaseUrl";
 import { Image } from "astro:assets";
 import type { CollectionEntry } from "astro:content";
 
@@ -24,7 +25,7 @@ const projectsToShow = projects.slice(0, 2);
     >
       {
         projectsToShow.map(({ collection, slug, data }) => (
-          <a href={`/${collection}/${slug}`} class="block">
+          <a href={`${getBaseUrl()}/${collection}/${slug}`} class="block">
             <Image
               src={data.cover.image}
               alt={data.cover.alt}
