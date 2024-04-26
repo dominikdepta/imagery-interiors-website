@@ -5,6 +5,7 @@ interface Props {
 }
 
 const { border = false, href } = Astro.props;
+const isActive = Astro.url.pathname.split("/")[1] === href.split("/")[1];
 ---
 
 <li>
@@ -12,6 +13,14 @@ const { border = false, href } = Astro.props;
     href={href}
     class:list={["block px-10 py-10 font-normal text-lg", border && "border-r"]}
   >
-    <slot />
+    <span
+      class:list={[
+        "relative inline-block",
+        isActive &&
+          'after:content-[""] after:w-full after:h-[2px] after:bg-black after:absolute after:left-0 after:bottom-0',
+      ]}
+    >
+      <slot />
+    </span>
   </a>
 </li>
