@@ -4,7 +4,7 @@ import { Icon } from "@components/Icon";
 export const ContactButton = () => (
   <Button
     type="link"
-    href="/contact"
+    href={`${import.meta.env.BASE_URL}contact`}
     variant="primary"
     className="mt-14"
     rightElement={<Icon type="arrow" />}

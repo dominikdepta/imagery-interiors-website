@@ -12,21 +12,25 @@ import TopBarMenuItem from "./TopBarMenu/TopBarMenuItem.astro";
     class="top-bar-nav w-full flex border-b transition-colors duration-300 border-black"
   >
     <TopBarMenu class="hidden lg:flex lg:w-1/4">
-      <TopBarMenuItem href="/contact" border>Contact</TopBarMenuItem>
-      <TopBarMenuItem href="/projects">Projects</TopBarMenuItem>
+      <TopBarMenuItem href={`${import.meta.env.BASE_URL}contact`} border
+        >Contact</TopBarMenuItem
+      >
+      <TopBarMenuItem href={`${import.meta.env.BASE_URL}projects`}
+        >Projects</TopBarMenuItem
+      >
     </TopBarMenu>
 
     <div class="relative w-full lg:w-2/4 p-5 flex justify-center">
       <MobileMenuButton />
 
-      <a href="/" class="flex items-center">
+      <a href={`${import.meta.env.BASE_URL}" class="flex items-center`}>
         <img
-          src="/logo.svg"
+          src={`${import.meta.env.BASE_URL}logo.svg`}
           alt="Imagery Interiors logo"
           class="hidden lg:block w-28"
         />
         <img
-          src="/logo-inline.svg"
+          src={`${import.meta.env.BASE_URL}logo-inline.svg`}
           alt="Imagery Interiors logo"
           class="block lg:hidden w-32"
         />
@@ -34,7 +38,9 @@ import TopBarMenuItem from "./TopBarMenu/TopBarMenuItem.astro";
     </div>
 
     <TopBarMenu class="hidden lg:flex lg:w-1/4" end>
-      <TopBarMenuItem href="/process">Process</TopBarMenuItem>
+      <TopBarMenuItem href={`${import.meta.env.BASE_URL}process`}
+        >Process</TopBarMenuItem
+      >
     </TopBarMenu>
   </div>
 

@@ -9,7 +9,7 @@ export const AppointmentButton = ({ className }: AppointmentButtonProps) => (
   <Button
     type="link"
     variant="primary"
-    href="/contact"
+    href={`${import.meta.env.BASE_URL}contact`}
     rightElement={<Icon type="arrow" />}
     className={className}
   >

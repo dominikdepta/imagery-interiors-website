@@ -6,9 +6,15 @@ import MobileMenuItem from "./MobileMenuItem.astro";
   class="top-bar-mobile-menu hidden opacity-0 transition-opacity duration-300 absolute h-[calc(100vh-100%)] w-full left-0 overflow-y-auto bg-white"
 >
   <div class="flex flex-col items-center justify-center py-20 gap-6">
-    <MobileMenuItem href="/">Home</MobileMenuItem>
-    <MobileMenuItem href="/contact">Contact</MobileMenuItem>
-    <MobileMenuItem href="/projects">Projects</MobileMenuItem>
-    <MobileMenuItem href="/process">Process</MobileMenuItem>
+    <MobileMenuItem href={`${import.meta.env.BASE_URL}`}>Home</MobileMenuItem>
+    <MobileMenuItem href={`${import.meta.env.BASE_URL}contact`}
+      >Contact</MobileMenuItem
+    >
+    <MobileMenuItem href={`${import.meta.env.BASE_URL}projects`}
+      >Projects</MobileMenuItem
+    >
+    <MobileMenuItem href={`${import.meta.env.BASE_URL}process`}
+      >Process</MobileMenuItem
+    >
   </div>
 </div>

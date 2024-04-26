@@ -9,15 +9,24 @@ import FooterMenuTitle from "./FooterMenuTitle.astro";
     <div>
       <FooterMenuTitle>Studio</FooterMenuTitle>
       <FooterMenuList>
-        <FooterMenuItem><a href="/process">Process</a></FooterMenuItem>
-        <FooterMenuItem><a href="/projects">Projects</a></FooterMenuItem>
+        <FooterMenuItem
+          ><a href={`${import.meta.env.BASE_URL}process`}>Process</a
+          ></FooterMenuItem
+        >
+        <FooterMenuItem
+          ><a href={`${import.meta.env.BASE_URL}projects`}>Projects</a
+          ></FooterMenuItem
+        >
       </FooterMenuList>
     </div>
 
     <div>
       <FooterMenuTitle>Connect</FooterMenuTitle>
       <FooterMenuList>
-        <FooterMenuItem><a href="/contact">Contact</a></FooterMenuItem>
+        <FooterMenuItem
+          ><a href={`${import.meta.env.BASE_URL}contact`}>Contact</a
+          ></FooterMenuItem
+        >
       </FooterMenuList>
     </div>
   </div>
