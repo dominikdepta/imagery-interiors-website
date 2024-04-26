@@ -1,63 +1,42 @@
 ---
+import MobileMenu from "./MobileMenu/MobileMenu.astro";
+import MobileMenuButton from "./MobileMenu/MobileMenuButton.astro";
 import TopBarMenu from "./TopBarMenu/TopBarMenu.astro";
 import TopBarMenuItem from "./TopBarMenu/TopBarMenuItem.astro";
 ---
 
-<script>
-  const navElem = document.querySelector(".top-bar-nav");
-  let prevScrollTop = document.documentElement.scrollTop;
-  const className = "bg-white";
-  const scrollDownTreshold = 200;
-  const scrollUpTreshold = 100;
+<script src="./script.ts"></script>
 
-  document.addEventListener("scroll", () => {
-    const currScrollTop = document.documentElement.scrollTop;
-    const scrollDir = currScrollTop > prevScrollTop ? "down" : "up";
-    const isPastUpAddTreshold =
-      scrollDir === "up" && currScrollTop > scrollDownTreshold;
-    const isPastDownRemoveTreshold = scrollDir === "down";
-    const isPastUpRemoveTreshold =
-      scrollDir === "up" && currScrollTop < scrollUpTreshold;
+<nav class="sticky lg:fixed z-20 top-0">
+  <div
+    class="top-bar-nav w-full flex border-b transition-colors duration-300 border-black"
+  >
+    <TopBarMenu class="hidden lg:flex lg:w-1/4">
+      <TopBarMenuItem href="/contact" border>Contact</TopBarMenuItem>
+      <TopBarMenuItem href="/projects">Projects</TopBarMenuItem>
+    </TopBarMenu>
 
-    if (!navElem?.classList.contains(className) && isPastUpAddTreshold) {
-      navElem?.classList.add(className);
-    }
+    <div class="relative w-full lg:w-2/4 p-5 flex justify-center">
+      <MobileMenuButton />
 
-    if (
-      navElem?.classList.contains(className) &&
-      (isPastDownRemoveTreshold || isPastUpRemoveTreshold)
-    ) {
-      navElem?.classList.remove(className);
-    }
+      <a href="/" class="flex items-center">
+        <img
+          src="/logo.svg"
+          alt="Imagery Interiors logo"
+          class="hidden lg:block w-28"
+        />
+        <img
+          src="/logo-inline.svg"
+          alt="Imagery Interiors logo"
+          class="block lg:hidden w-32"
+        />
+      </a>
+    </div>
 
-    prevScrollTop = currScrollTop;
-  });
-</script>
-
-<nav
-  class="top-bar-nav w-full flex sticky lg:fixed z-20 top-0 border-b transition-colors border-black"
->
-  <TopBarMenu class="hidden lg:flex lg:w-1/4">
-    <TopBarMenuItem href="/contact" border>Contact</TopBarMenuItem>
-    <TopBarMenuItem href="/projects">Projects</TopBarMenuItem>
-  </TopBarMenu>
-
-  <div class="w-full lg:w-2/4 p-5 flex justify-center">
-    <a href="/" class="flex items-center">
-      <img
-        src="/logo.svg"
-        alt="Imagery Interiors logo"
-        class="hidden lg:block w-28"
-      />
-      <img
-        src="/logo-inline.svg"
-        alt="Imagery Interiors logo"
-        class="block lg:hidden w-32"
-      />
-    </a>
+    <TopBarMenu class="hidden lg:flex lg:w-1/4" end>
+      <TopBarMenuItem href="/process">Process</TopBarMenuItem>
+    </TopBarMenu>
   </div>
 
-  <TopBarMenu class="hidden lg:flex lg:w-1/4" end>
-    <TopBarMenuItem href="/process">Process</TopBarMenuItem>
-  </TopBarMenu>
+  <MobileMenu />
 </nav>

@@ -1,0 +1,19 @@
+---
+import { Button } from "@components/Button";
+
+interface Props {
+  href: string;
+}
+
+const { href } = Astro.props;
+const isActive = Astro.url.pathname.split("/")[1] === href.split("/")[1];
+---
+
+<Button
+  type="link"
+  variant="secondary"
+  href={href}
+  className={`p-4 text-xl ${isActive ? "font-extrabold" : ""}`}
+>
+  <slot />
+</Button>
