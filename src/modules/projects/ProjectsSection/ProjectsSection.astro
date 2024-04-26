@@ -8,6 +8,7 @@ import {
   ProjectsSlider,
   type ProjectsSliderItemProps,
 } from "../ProjectsSlider";
+import { filterRecentProjects } from "../utils";
 
 interface Props {
   title: string;
@@ -24,20 +25,18 @@ const {
 } = Astro.props;
 
 const projects = await getCollection("projects");
-const projectsByDateCompletion = [...projects].sort(
-  (a, b) => b.data.dateCompletion.getTime() - a.data.dateCompletion.getTime(),
-);
+const projectsByDateCompletion = filterRecentProjects(projects);
 
-const items: ProjectsSliderItemProps[] = projectsByDateCompletion
-  .slice(0, 16)
-  .map(({ collection, slug, data }) => ({
+const items: ProjectsSliderItemProps[] = projectsByDateCompletion.map(
+  ({ collection, slug, data }) => ({
     img: data.cover.image.src,
     alt: data.cover.alt,
     title: data.name,
     date: `${new Date(data.dateCompletion).getFullYear()}`,
     href: `/${collection}/${slug}`,
     tags: data.tags,
-  }));
+  }),
+);
 ---
 
 <SectionFull class:list={["bg-lightGray", className]}>
