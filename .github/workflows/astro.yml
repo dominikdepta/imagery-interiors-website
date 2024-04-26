@@ -75,10 +75,12 @@ jobs:
       - name: Upload dist artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          name: dist
           path: ${{ env.BUILD_PATH }}/dist
       - name: Upload public artifact
         uses: actions/upload-pages-artifact@v3
         with:
+          name: public
           path: ${{ env.BUILD_PATH }}/public
 
   deploy:
