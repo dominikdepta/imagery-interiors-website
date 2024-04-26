@@ -9,6 +9,7 @@ import {
   type ProjectsSliderItemProps,
 } from "../ProjectsSlider";
 import { filterRecentProjects } from "../utils";
+import { getBaseUrl } from "@utils/getBaseUrl";
 
 interface Props {
   title: string;
@@ -26,6 +27,7 @@ const {
 
 const projects = await getCollection("projects");
 const projectsByDateCompletion = filterRecentProjects(projects);
+const baseUrl = getBaseUrl();
 
 const items: ProjectsSliderItemProps[] = projectsByDateCompletion.map(
   ({ collection, slug, data }) => ({
@@ -33,7 +35,7 @@ const items: ProjectsSliderItemProps[] = projectsByDateCompletion.map(
     alt: data.cover.alt,
     title: data.name,
     date: `${new Date(data.dateCompletion).getFullYear()}`,
-    href: `/${collection}/${slug}`,
+    href: `${baseUrl}/${collection}/${slug}`,
     tags: data.tags,
   }),
 );
