@@ -1,10 +1,17 @@
 import type { APIContext } from "astro";
+import { getBaseUrl } from "./getBaseUrl";
 
-export const remoteTrailingSlash = (path: string) => path.replace(/\/$/, "");
+export const removeTrailingSlash = (path: string) => path.replace(/\/$/, "");
+
+export const removeBaseUrl = (path: string) => {
+  const baseUrl = getBaseUrl();
+
+  return baseUrl === "/" ? path : path.replace(baseUrl, "");
+};
 
 export const isActivePath = (context: APIContext, path: string, depth = 0) => {
-  const currentPath = remoteTrailingSlash(context.url.pathname);
-  const paramPath = remoteTrailingSlash(path);
+  const currentPath = removeTrailingSlash(removeBaseUrl(context.url.pathname));
+  const paramPath = removeTrailingSlash(removeBaseUrl(path));
 
   if (depth > 0) {
     return (
