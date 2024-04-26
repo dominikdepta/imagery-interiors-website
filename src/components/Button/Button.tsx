@@ -12,10 +12,10 @@ const classUnderlined = "border-b-2 border-black uppercase";
 export const Button = (props: ButtonProps) => {
   const classList = [
     classCommon,
-    props.variant === "basic" && classBasic,
-    props.variant === "primary" && classPrimary,
-    props.variant === "secondary" && classSecondary,
-    props.variant === "underlined" && classUnderlined,
+    props.variant === "basic" ? classBasic : "",
+    props.variant === "primary" ? classPrimary : "",
+    props.variant === "secondary" ? classSecondary : "",
+    props.variant === "underlined" ? classUnderlined : "",
   ];
 
   if (isLinkType(props)) {
