@@ -28,8 +28,8 @@ export const ProjectsSlider = ({ items }: ProjectsSliderProps) => {
         },
       }}
     >
-      {slides.map((slide) => (
-        <ProjectsSliderItem key={slide.id} {...slide} />
+      {slides.map((slide, i) => (
+        <ProjectsSliderItem key={i} {...slide} />
       ))}
     </Slider>
   );
