@@ -1,10 +1,14 @@
 ---
 import Layout from "@layouts/Layout.astro";
+import ProjectPage from "@modules/projects/ProjectPage/ProjectPage.astro";
+import { filterRecentProjects } from "@modules/projects/utils";
+import { getCollection } from "astro:content";
+
+const projects = await getCollection("projects");
+const recentProjects = filterRecentProjects(projects);
 ---
 
-<Layout title="Imagery Interiors - Projects">
-  <main>
-    <!-- TODO: use content collections and dynamic routing -->
-    [projects page]
-  </main>
+<Layout title="Imagery Interiors - Recent project">
+  {/* @ts-expect-error */}
+  <ProjectPage project={recentProjects[0]} recentProjects={recentProjects} />
 </Layout>
