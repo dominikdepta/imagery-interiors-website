@@ -3,7 +3,40 @@ import TopBarMenu from "./TopBarMenu/TopBarMenu.astro";
 import TopBarMenuItem from "./TopBarMenu/TopBarMenuItem.astro";
 ---
 
-<nav class="w-full flex sticky lg:fixed z-20 top-0 border-b border-black">
+<script>
+  const navElem = document.querySelector(".top-bar-nav");
+  let prevScrollTop = document.documentElement.scrollTop;
+  const className = "bg-white";
+  const scrollDownTreshold = 200;
+  const scrollUpTreshold = 100;
+
+  document.addEventListener("scroll", () => {
+    const currScrollTop = document.documentElement.scrollTop;
+    const scrollDir = currScrollTop > prevScrollTop ? "down" : "up";
+    const isPastUpAddTreshold =
+      scrollDir === "up" && currScrollTop > scrollDownTreshold;
+    const isPastDownRemoveTreshold = scrollDir === "down";
+    const isPastUpRemoveTreshold =
+      scrollDir === "up" && currScrollTop < scrollUpTreshold;
+
+    if (!navElem?.classList.contains(className) && isPastUpAddTreshold) {
+      navElem?.classList.add(className);
+    }
+
+    if (
+      navElem?.classList.contains(className) &&
+      (isPastDownRemoveTreshold || isPastUpRemoveTreshold)
+    ) {
+      navElem?.classList.remove(className);
+    }
+
+    prevScrollTop = currScrollTop;
+  });
+</script>
+
+<nav
+  class="top-bar-nav w-full flex sticky lg:fixed z-20 top-0 border-b transition-colors border-black"
+>
   <TopBarMenu class="hidden lg:flex lg:w-1/4">
     <TopBarMenuItem href="/contact" border>Contact</TopBarMenuItem>
     <TopBarMenuItem href="/projects">Projects</TopBarMenuItem>
