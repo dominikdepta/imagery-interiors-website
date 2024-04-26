@@ -3,6 +3,7 @@ import { Button } from "@components/Button";
 import Container from "@components/Container/Container.astro";
 import Heading from "@components/Heading/Heading.astro";
 import SectionFull from "@components/Section/SectionFull/SectionFull.astro";
+import { getBaseUrl } from "@utils/getBaseUrl";
 ---
 
 <SectionFull
@@ -20,7 +21,7 @@ import SectionFull from "@components/Section/SectionFull/SectionFull.astro";
     <Button
       type="link"
       variant="underlined"
-      href={`${import.meta.env.BASE_URL}faq`}
+      href={`${getBaseUrl()}/faq`}
       className="mt-6 lg:mt-14"
     >
       Read FAQ

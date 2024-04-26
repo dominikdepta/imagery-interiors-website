@@ -4,6 +4,7 @@ import Heading from "@components/Heading/Heading.astro";
 import SectionHalf from "@components/Section/SectionHalf/SectionHalf.astro";
 import SectionHalfContent from "@components/Section/SectionHalf/SectionHalfContent.astro";
 import SectionHalfImage from "@components/Section/SectionHalf/SectionHalfImage.astro";
+import { getBaseUrl } from "@utils/getBaseUrl";
 import interior5 from "./assets/interior5.webp";
 ---
 
@@ -22,7 +23,7 @@ import interior5 from "./assets/interior5.webp";
 
       <Button
         type="link"
-        href={`${import.meta.env.BASE_URL}process`}
+        href={`${getBaseUrl()}/process`}
         variant="underlined"
         className="mt-14"
       >

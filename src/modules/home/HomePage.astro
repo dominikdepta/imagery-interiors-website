@@ -2,20 +2,21 @@
 import BackToTop from "@modules/common/BackToTop/BackToTop.astro";
 import Footer from "@modules/common/Footer/Footer.astro";
 import InstagramSectionTop from "@modules/instagram/InstagramSectionTop.astro";
+import ProjectsSection from "@modules/projects/ProjectsSection/ProjectsSection.astro";
 import ReviewsSection from "@modules/reviews/ReviewsSection.astro";
+import { getBaseUrl } from "@utils/getBaseUrl";
 import FeaturedSection from "./FeaturedSection.astro";
 import HeroSection from "./HeroSection.astro";
 import HowItWorksSection from "./HowItWorksSection.astro";
 import OurTeamSection from "./OurTeamSection.astro";
 import WeAreSection from "./WeAreSection.astro";
-import ProjectsSection from "@modules/projects/ProjectsSection/ProjectsSection.astro";
 ---
 
 <main>
   <HeroSection />
   <ProjectsSection
     title="We believe in the remarkable power of design to influence the quality of life."
-    linkHref={`${import.meta.env.BASE_URL}projects`}
+    linkHref={`${getBaseUrl()}/projects`}
   />
   <WeAreSection />
   <HowItWorksSection />
