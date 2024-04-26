@@ -2,6 +2,7 @@
 import Container from "@components/Container/Container.astro";
 import Heading from "@components/Heading/Heading.astro";
 import SectionFull from "@components/Section/SectionFull/SectionFull.astro";
+import { getBaseUrl } from "@utils/getBaseUrl";
 import type { CollectionEntry } from "astro:content";
 
 interface Props {
@@ -30,7 +31,7 @@ const { project, projects } = Astro.props;
       {
         projects.map(({ collection, slug, data }) => (
           <a
-            href={`/${collection}/${slug}`}
+            href={`${getBaseUrl()}/${collection}/${slug}`}
             class={`${project.slug === slug ? 'text-lightBlack after:content-[""] after:w-full after:h-[2px] after:bg-black after:absolute after:left-0 after:bottom-0' : "text-darkGray"} relative max-w-36 text-lg`}
           >
             {data.name}
