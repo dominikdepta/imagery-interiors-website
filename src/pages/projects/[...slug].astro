@@ -1,10 +1,12 @@
 ---
 import Layout from "@layouts/Layout.astro";
 import ProjectPage from "@modules/projects/ProjectPage/ProjectPage.astro";
+import { filterRecentProjects } from "@modules/projects/utils";
 import { getCollection } from "astro:content";
 
 export const getStaticPaths = async () => {
   const projects = await getCollection("projects");
+  const recentProjects = filterRecentProjects(projects);
 
   return projects.map((project) => ({
     params: {
@@ -12,14 +14,14 @@ export const getStaticPaths = async () => {
     },
     props: {
       project,
-      projects,
+      recentProjects,
     },
   }));
 };
 
-const { project, projects } = Astro.props;
+const { project, recentProjects } = Astro.props;
 ---
 
 <Layout title={`${project.data.name} - ${project.data.title}`}>
-  <ProjectPage project={project} projects={projects} />
+  <ProjectPage project={project} recentProjects={recentProjects} />
 </Layout>

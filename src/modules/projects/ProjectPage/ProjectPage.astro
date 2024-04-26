@@ -5,22 +5,37 @@ import type { CollectionEntry } from "astro:content";
 import HeadingSection from "./HeadingSection.astro";
 import CoverSection from "./CoverSection.astro";
 import DescriptionSection from "./DescriptionSection.astro";
+import MoreProjectsSection from "./MoreProjectsSection.astro";
 
 interface Props {
   project: CollectionEntry<"projects">;
-  projects: CollectionEntry<"projects">[];
+  recentProjects: CollectionEntry<"projects">[];
 }
 
-const { project, projects } = Astro.props;
+const { project, recentProjects } = Astro.props;
 const { Content } = await project.render();
+
+const projectIndex = recentProjects.findIndex(({ id }) => id === project.id);
+const moreProjects =
+  recentProjects?.length > 2
+    ? [
+        recentProjects[(projectIndex + 1) % recentProjects.length],
+        recentProjects[(projectIndex + 2) % recentProjects.length],
+      ]
+    : [];
 ---
 
 <main>
-  <HeadingSection project={project} projects={projects} />
+  <HeadingSection project={project} projects={recentProjects} />
   <CoverSection project={project} />
   <DescriptionSection project={project} />
   <Content />
-  <div>[More projects (nav)]</div>
+  {
+    moreProjects.length > 0 && (
+      // @ts-expect-error
+      <MoreProjectsSection projects={moreProjects} />
+    )
+  }
   <div>[Our team]</div>
   <BackToTop />
   <Footer />

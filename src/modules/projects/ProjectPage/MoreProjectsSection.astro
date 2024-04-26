@@ -1,0 +1,49 @@
+---
+import Container from "@components/Container/Container.astro";
+import Heading from "@components/Heading/Heading.astro";
+import SectionFull from "@components/Section/SectionFull/SectionFull.astro";
+import { Image } from "astro:assets";
+import type { CollectionEntry } from "astro:content";
+
+interface Props {
+  projects: CollectionEntry<"projects">[];
+}
+
+const { projects } = Astro.props;
+const projectsToShow = projects.slice(0, 2);
+---
+
+<SectionFull class="bg-white">
+  <Container>
+    <Heading level="2" class="text-center">
+      See <span class="italic tracking-tight">more</span> projects
+    </Heading>
+
+    <div
+      class="grid sm:grid-cols-2 gap-12 grid-rows-[230px] lg:grid-rows-[430px] mt-6 lg:mt-14"
+    >
+      {
+        projectsToShow.map(({ collection, slug, data }) => (
+          <a href={`/${collection}/${slug}`} class="block">
+            <Image
+              src={data.cover.image}
+              alt={data.cover.alt}
+              class="h-full object-cover"
+            />
+            <div class="flex justify-between mt-1 text-sm lg:text-lg">
+              <span class="text-lightBlack text-nowrap text-ellipsis overflow-hidden">
+                {data.name}
+              </span>
+
+              {data.dateCompletion && (
+                <span class="text-darkGray">
+                  {data.dateCompletion.getFullYear()}
+                </span>
+              )}
+            </div>
+          </a>
+        ))
+      }
+    </div>
+  </Container>
+</SectionFull>
