@@ -9,7 +9,7 @@ const baseUrl = getBaseUrl();
   class="top-bar-mobile-menu hidden opacity-0 transition-opacity duration-300 absolute h-[calc(100vh-100%)] w-full left-0 overflow-y-auto bg-white"
 >
   <div class="flex flex-col items-center justify-center py-20 gap-6">
-    <MobileMenuItem href={`${baseUrl}/`}>Home</MobileMenuItem>
+    <MobileMenuItem href={`${baseUrl ? baseUrl : "/"}`}>Home</MobileMenuItem>
     <MobileMenuItem href={`${baseUrl}/contact`}>Contact</MobileMenuItem>
     <MobileMenuItem href={`${baseUrl}/projects`}>Projects</MobileMenuItem>
     <MobileMenuItem href={`${baseUrl}/process`}>Process</MobileMenuItem>
