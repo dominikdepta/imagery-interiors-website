@@ -13,7 +13,8 @@ const { project } = Astro.props;
   <Image
     src={project.data.cover.image}
     alt={project.data.cover.alt}
-    densities={[1.5, 2]}
+    widths={[400, 1024, 1920, project.data.cover.image.width]}
+    sizes={`(max-width: 400px) 400px, (max-width: 1024px) 1024px, (max-width: 1920) 1920px, ${project.data.cover.image.width}`}
     quality="high"
     class="w-full"
   />

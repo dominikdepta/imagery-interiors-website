@@ -5,6 +5,7 @@ import {
   ProjectGallerySlider,
   type ProjectGallerySliderItemProps,
 } from "../ProjectGallerySlider";
+import { getImage } from "astro:assets";
 
 export interface ProjectGalleryImage {
   image: ImageMetadata;
@@ -17,10 +18,23 @@ export interface Props {
 
 const { images = [] } = Astro.props;
 
-const items: ProjectGallerySliderItemProps[] = images.map(({ image, alt }) => ({
-  img: image.src,
-  alt,
-}));
+const getItems = async (): Promise<ProjectGallerySliderItemProps[]> =>
+  await Promise.all(
+    images.map(async ({ image, alt }) => {
+      const optimizedImage = await getImage({
+        src: image,
+        width: 1920,
+        sizes: [200, 300],
+      });
+
+      return {
+        img: optimizedImage.src,
+        alt,
+      };
+    }),
+  );
+
+const items: ProjectGallerySliderItemProps[] = await getItems();
 ---
 
 <SectionFull class="bg-lightGray">
