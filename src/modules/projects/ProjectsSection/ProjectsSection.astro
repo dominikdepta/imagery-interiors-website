@@ -3,6 +3,7 @@ import { Button } from "@components/Button";
 import Container from "@components/Container/Container.astro";
 import Heading from "@components/Heading/Heading.astro";
 import SectionFull from "@components/Section/SectionFull/SectionFull.astro";
+import { getImage } from "astro:assets";
 import { getCollection } from "astro:content";
 import {
   ProjectsSlider,
@@ -29,16 +30,26 @@ const projects = await getCollection("projects");
 const projectsByDateCompletion = filterRecentProjects(projects);
 const baseUrl = getBaseUrl();
 
-const items: ProjectsSliderItemProps[] = projectsByDateCompletion.map(
-  ({ collection, slug, data }) => ({
-    img: data.cover.image.src,
-    alt: data.cover.alt,
-    title: data.name,
-    date: `${new Date(data.dateCompletion).getFullYear()}`,
-    href: `${baseUrl}/${collection}/${slug}`,
-    tags: data.tags,
-  }),
-);
+const getItems = async (): Promise<ProjectsSliderItemProps[]> =>
+  await Promise.all(
+    projectsByDateCompletion.map(async ({ collection, slug, data }) => {
+      const optimizedImage = await getImage({
+        src: data.cover.image,
+        height: 390,
+      });
+
+      return {
+        img: optimizedImage.src,
+        alt: data.cover.alt,
+        title: data.name,
+        date: `${new Date(data.dateCompletion).getFullYear()}`,
+        href: `${baseUrl}/${collection}/${slug}`,
+        tags: data.tags,
+      };
+    }),
+  );
+
+const items: ProjectsSliderItemProps[] = await getItems();
 ---
 
 <SectionFull class:list={["bg-lightGray", className]}>
