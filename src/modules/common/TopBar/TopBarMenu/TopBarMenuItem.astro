@@ -18,6 +18,7 @@ const isActive = isActivePath(Astro, href, 1);
     <span
       class:list={[
         "relative inline-block",
+        'hover:after:content-[""] hover:after:w-full hover:after:h-[2px] hover:after:bg-black hover:after:absolute hover:after:left-0 hover:after:bottom-0',
         isActive &&
           'after:content-[""] after:w-full after:h-[2px] after:bg-black after:absolute after:left-0 after:bottom-0',
       ]}
