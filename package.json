@@ -11,25 +11,25 @@
     "prepare": "husky"
   },
   "dependencies": {
-    "@astrojs/check": "^0.5.10",
-    "@astrojs/mdx": "^2.3.1",
-    "@astrojs/react": "^3.3.0",
+    "@astrojs/check": "^0.8.1",
+    "@astrojs/mdx": "^3.1.2",
+    "@astrojs/react": "^3.6.0",
     "@astrojs/tailwind": "^5.1.0",
-    "@types/react": "^18.2.79",
-    "@types/react-dom": "^18.2.25",
-    "astro": "^4.6.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
+    "@types/react": "^18.3.3",
+    "@types/react-dom": "^18.3.0",
+    "astro": "^4.11.5",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
     "react-use": "^17.5.0",
-    "swiper": "^11.1.1",
-    "tailwindcss": "^3.4.3"
+    "swiper": "^11.1.4",
+    "tailwindcss": "^3.4.4"
   },
   "devDependencies": {
     "husky": "^9.0.11",
-    "lint-staged": "^15.2.2",
-    "prettier": "^3.2.5",
-    "prettier-plugin-astro": "^0.13.0",
-    "typescript": "^5.4.5"
+    "lint-staged": "^15.2.7",
+    "prettier": "^3.3.2",
+    "prettier-plugin-astro": "^0.14.0",
+    "typescript": "^5.5.3"
   },
   "lint-staged": {
     "*.{js,jsx,ts,tsx,css,md,astro}": "prettier --write --plugin=prettier-plugin-astro"
