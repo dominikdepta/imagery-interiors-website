@@ -12,17 +12,17 @@
   },
   "dependencies": {
     "@astrojs/check": "^0.9.3",
-    "@astrojs/mdx": "^3.1.5",
+    "@astrojs/mdx": "^3.1.7",
     "@astrojs/react": "^3.6.2",
-    "@astrojs/tailwind": "^5.1.0",
-    "@types/react": "^18.3.5",
+    "@astrojs/tailwind": "^5.1.1",
+    "@types/react": "^18.3.9",
     "@types/react-dom": "^18.3.0",
-    "astro": "^4.15.4",
+    "astro": "^4.15.9",
     "react": "^18.3.1",
     "react-dom": "^18.3.1",
     "react-use": "^17.5.1",
-    "swiper": "^11.1.12",
-    "tailwindcss": "^3.4.11"
+    "swiper": "^11.1.14",
+    "tailwindcss": "^3.4.13"
   },
   "devDependencies": {
     "husky": "^9.1.6",
